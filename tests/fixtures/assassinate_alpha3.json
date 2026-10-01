@@ -1,0 +1,294 @@
+{
+  "source": "User killsteal.log, 2026-09-28 08:12–08:13, alpha3",
+  "limitations": "Sparse cast/mark edges only. Tests synthesize intermediate polling, position, inventory and input backend. No in-game reflection result recorded.",
+  "casts": [
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 21090.684475,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cd": 0.0,
+        "start": 5345.8335,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      },
+      "marks": [
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21090.684475,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": true,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21092.689981,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21093.697694,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": false,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        }
+      ],
+      "release": {
+        "kind": "cast_fields",
+        "at": 21092.689981,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cd": 10.0,
+        "start": 5347.8335,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      }
+    },
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 21105.656237,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cd": 0.0,
+        "start": 5360.8003,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      },
+      "marks": [
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21105.656237,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": true,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21107.648058,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21108.659344,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": false,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        }
+      ],
+      "release": {
+        "kind": "cast_fields",
+        "at": 21107.648058,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cd": 10.0,
+        "start": 5362.8003,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      }
+    },
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 21116.032393,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cd": 0.0,
+        "start": 5371.167,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      },
+      "marks": [
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21116.032393,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": true,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21118.034026,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21119.043865,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": false,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        }
+      ],
+      "release": {
+        "kind": "cast_fields",
+        "at": 21118.034026,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cd": 10.0,
+        "start": 5373.167,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      }
+    },
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 21152.580718,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cd": 0.0,
+        "start": 5407.7334,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      },
+      "marks": [
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21152.580718,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": true,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21154.588743,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": true,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        },
+        {
+          "kind": "modifier_diagnostic",
+          "at": 21155.59469,
+          "local": "0x2262cd6e000",
+          "source": "0x2262ed14000",
+          "phase": false,
+          "use_for_input": false,
+          "present": {
+            "CDOTA_Modifier_Sniper_Assassinate": false,
+            "CDOTA_Modifier_Sniper_Assassinate_Trigger": false
+          }
+        }
+      ],
+      "release": {
+        "kind": "cast_fields",
+        "at": 21154.588743,
+        "local": "0x2262cd6e000",
+        "source": "0x2262ed14000",
+        "ability": "0x2262ed29500",
+        "ability_handle": "0x1578091",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cd": 10.0,
+        "start": 5409.7334,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 1021,
+        "target_state": "invalid_handle"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "backup": "C:\\Users\\Ilya\\Desktop\\dothhach\\.patch_backups\\20260930-045840-7037ac46",
+  "changes": [
+    "DW_GAME_ENTITY_SYSTEM: 0x653db10 -> 0x653dbb0",
+    "DW_VIEW_MATRIX: 0x61c4f10 -> 0x61c4f80",
+    "DW_VIEW_RENDER: 0x61c58c8 -> 0x61c5938",
+    "DW_GAME_RULES: 0x61bf940 -> 0x61bf9b0",
+    "DW_GLOBAL_VARS: 0x5a8c380 -> 0x5a8c400"
+  ],
+  "buttons_stored_not_applied": [
+    "attack",
+    "attack2",
+    "back",
+    "duck",
+    "forward",
+    "jump",
+    "left",
+    "query",
+    "reload",
+    "right",
+    "sprint",
+    "turnleft",
+    "turnright",
+    "use"
+  ]
+}

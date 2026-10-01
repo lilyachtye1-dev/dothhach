@@ -1,0 +1,31 @@
+{
+  "release": "Last Hit alpha7 DAMAGE1",
+  "base": "working Last Hit alpha7 mouse",
+  "files": {
+    "last_hit_core.py": "db342224981988afedb544bdd86d9e464c256f941cf16c4dc9a6b53bb88f306b",
+    "last_hit_reader.py": "102e95efcd57b80d3ad0725b090c8719183672a64c3daf655c94efdfd48ebcd6",
+    "last_hit_stats.py": "50e7ee97997171ccf39a57d235e4649eb771e225501dc879a08d38c1888b9c35",
+    "last_hit_quelling.py": "3c7dce14f63eafc0d93b2ae0e65d9616c4e63ee36c04ec1efcb3d382a824d188",
+    "last_hit_service.py": "e6b688d67e7842a18096b9319f72e77912c7aab14dc980688ffeac7de40a0209",
+    "last_hit_menu.cs": "4320d028ebd0987ce6d2c18330b8ceec20ea8513e7f2f3466eb03164bff3c477",
+    "ks_menu.cs": "163dab80e9208baf81b0b91f0753c2dfc084ff96aabeaf517bb6e48b67c2e3c9",
+    "start.bat": "bbd1b4555372404632f16c3c8c4a03959769dd878680252bd60dd59c333af401",
+    "tests/test_last_hit_damage1.py": "beecb5f8ba7a6ff9eb21005ac90a12f72a51b2bd86c3457b7f5a8bc9445035c9",
+    "LAST_HIT_DAMAGE1.md": "218e2e3c92a9503401cb36d5d31c44fca7bcb678940e6e734fb2307d92d15cad"
+  },
+  "input_unchanged": {
+    "ks_input.py": "0cf06ecc7dd46d6fec2bc2dbd0589b6bcbf399776891e7a03572980598090c16",
+    "ks_key_state.py": "9e719c945685c3be9cb42371a67c20a604ae41582a6a3ffc461b914410dbe6d2",
+    "ks_service.py": "08c85de9cd660c5ba7f48497abcf219a8b157bc71803a26825e2f5e631af8154",
+    "last_hit_mouse.py": "791cecaa9a9bb88ba51d4a97a2ce02f181fbf6cd2ee65e72df37fa4d1a3b8e44"
+  },
+  "tests": {
+    "total": 952,
+    "passed": 952,
+    "skipped": 0,
+    "new_damage_tests": 51
+  },
+  "live_game_tested": false,
+  "incoming_attribution": "not implemented; observed HP loss and guarded trend only",
+  "quell": "live owned modifier fields + active inventory; unknown bonus not added"
+}

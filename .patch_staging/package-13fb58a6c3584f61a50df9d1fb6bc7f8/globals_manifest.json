@@ -1,0 +1,20 @@
+{
+  "format": "hachbob-offsets-v1",
+  "schema_sha256": "fabedd63041971c8ee09243fb229abd896d259b8e7351a61c1700f594868b1c6",
+  "build": 6356260,
+  "client.dll": {
+    "DW_GAME_ENTITY_SYSTEM": 106159024,
+    "DW_VIEW_MATRIX": 102518656,
+    "DW_VIEW_RENDER": 102521144,
+    "DW_GAME_RULES": 102496688,
+    "DW_GLOBAL_VARS": 94946304
+  },
+  "engine2.dll": {
+    "DW_NETWORK_GAME_CLIENT": 9493552,
+    "DW_BUILD_NUMBER": 6356260
+  },
+  "object_offsets": {
+    "DW_HIGHEST_INDEX": 8336,
+    "OFF_NGC_LOCAL_PLAYER": 248
+  }
+}

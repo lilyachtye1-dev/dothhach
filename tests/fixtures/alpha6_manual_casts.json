@@ -1,0 +1,131 @@
+{
+  "scope": "Sparse real alpha6 events: no measured positions/Blink input or continuous memory replay. Three casts with no SENT; actual reset cause was not logged.",
+  "missed_casts": [
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 88573.523113,
+        "local": "0x2d2f47d6000",
+        "source": "0x2d2f4bea000",
+        "ability": "0x2d2f826d400",
+        "ability_handle": "0x137028a",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cast_point": 2.0,
+        "cd": 0.0,
+        "start": 9115.334,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 309,
+        "target_state": "invalid_handle"
+      },
+      "release": {
+        "kind": "cast_fields",
+        "at": 88575.521982,
+        "local": "0x2d2f47d6000",
+        "source": "0x2d2f4bea000",
+        "ability": "0x2d2f826d400",
+        "ability_handle": "0x137028a",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cast_point": 2.0,
+        "cd": 10.0,
+        "start": 9117.334,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 309,
+        "target_state": "invalid_handle"
+      }
+    },
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 88598.381925,
+        "local": "0x2d2f47d6000",
+        "source": "0x2d2f4bea000",
+        "ability": "0x2d2f826d400",
+        "ability_handle": "0x137028a",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cast_point": 2.0,
+        "cd": 0.0,
+        "start": 9140.2002,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 309,
+        "target_state": "invalid_handle"
+      },
+      "release": {
+        "kind": "cast_fields",
+        "at": 88600.381353,
+        "local": "0x2d2f47d6000",
+        "source": "0x2d2f4bea000",
+        "ability": "0x2d2f826d400",
+        "ability_handle": "0x137028a",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cast_point": 2.0,
+        "cd": 10.0,
+        "start": 9142.2002,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 309,
+        "target_state": "invalid_handle"
+      }
+    },
+    {
+      "begin": {
+        "kind": "cast_fields",
+        "at": 88610.894125,
+        "local": "0x2d2f47d6000",
+        "source": "0x2d2f4bea000",
+        "ability": "0x2d2f826d400",
+        "ability_handle": "0x137028a",
+        "name": "sniper_assassinate",
+        "phase": 1,
+        "cast_point": 2.0,
+        "cd": 0.0,
+        "start": 9152.7002,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 309,
+        "target_state": "invalid_handle"
+      },
+      "release": {
+        "kind": "cast_fields",
+        "at": 88612.897225,
+        "local": "0x2d2f47d6000",
+        "source": "0x2d2f4bea000",
+        "ability": "0x2d2f826d400",
+        "ability_handle": "0x137028a",
+        "name": "sniper_assassinate",
+        "phase": 0,
+        "cast_point": 2.0,
+        "cd": 10.0,
+        "start": 9154.7002,
+        "target_raw": "0xffffffff",
+        "target_index": null,
+        "local_index": 309,
+        "target_state": "invalid_handle"
+      }
+    }
+  ],
+  "modifier_races": [
+    {
+      "kind": "local_mark",
+      "at": 88560.830425,
+      "local": "0x2d2f47d6000",
+      "modifier": "CDOTA_Modifier_Sniper_Assassinate",
+      "use_for_input": true,
+      "unknown": "modifier changed during read"
+    },
+    {
+      "kind": "local_mark",
+      "at": 88582.541573,
+      "local": "0x2d2f47d6000",
+      "modifier": "CDOTA_Modifier_Sniper_Assassinate",
+      "use_for_input": true,
+      "unknown": "modifier vector changed during read"
+    }
+  ]
+}

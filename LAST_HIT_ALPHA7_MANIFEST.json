@@ -1,0 +1,25 @@
+{
+  "release": "Last Hit alpha7 mouse window",
+  "base": "installed alpha6 FIX1",
+  "files": {
+    "ks_input.py": "0cf06ecc7dd46d6fec2bc2dbd0589b6bcbf399776891e7a03572980598090c16",
+    "ks_key_state.py": "9e719c945685c3be9cb42371a67c20a604ae41582a6a3ffc461b914410dbe6d2",
+    "ks_service.py": "08c85de9cd660c5ba7f48497abcf219a8b157bc71803a26825e2f5e631af8154",
+    "last_hit_service.py": "0500992280e253208ab1e2c5d1e802d7b4853488c9fc91ff8c83b8dabe213841",
+    "last_hit_mouse.py": "791cecaa9a9bb88ba51d4a97a2ce02f181fbf6cd2ee65e72df37fa4d1a3b8e44",
+    "last_hit_menu.cs": "dc47f2d2eb4f3b4810b5f896478d0ebba7b164a32df51decf0e75c1cd67fce5a",
+    "start.bat": "7b42dd4c1b80266f49022b53503148359673b7abba5ef4f7c0b7947bb992d5c9",
+    "tests/test_last_hit_alpha6_controls.py": "f4a07bcd500947e08c5bcfe47b14f6c3fed7e3df89ab03abdfe3935af4ffe21a",
+    "tests/test_last_hit_alpha7_mouse.py": "d1d469ba660f340514aaa2c26fc972a6c336c75d752085ea422fbe744891ca00",
+    "LAST_HIT_ALPHA7_MOUSE.md": "9e7a17f231ea6d33d16dd0aa7d42165dcfdaa1c1faf4efcc6f0860adbad0e759"
+  },
+  "checks": {
+    "tests_total": 901,
+    "passed": 901,
+    "skipped": 0,
+    "new_tests": 40,
+    "native": "C#5 x64 full five sources / .NET48 references / warnaserror",
+    "live_game_tested": false,
+    "shared_cast_changes": "early mouse-window cleanup only; other pre-existing input functions AST unchanged"
+  }
+}

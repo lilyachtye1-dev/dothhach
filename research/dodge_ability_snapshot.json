@@ -1,0 +1,1188 @@
+{
+  "source": "https://raw.githubusercontent.com/odota/dotaconstants/bf193a5/build/abilities.json",
+  "not_runtime_verified": true,
+  "abilities": {
+    "antimage_counterspell": {
+      "dname": "Counterspell",
+      "behavior": [
+        "No Target",
+        "Instant Cast"
+      ],
+      "dispellable": "Yes",
+      "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and reflects any targeted spells.",
+      "attrib": [
+        {
+          "key": "magic_resistance",
+          "header": "MAGIC RESISTANCE:",
+          "value": [
+            "14",
+            "21",
+            "28",
+            "35"
+          ]
+        },
+        {
+          "key": "duration",
+          "header": "DURATION:",
+          "value": "1.3"
+        },
+        {
+          "key": "duration_illusion",
+          "header": "DURATION ILLUSION:",
+          "value": "4",
+          "generated": true
+        },
+        {
+          "key": "outgoing_damage",
+          "header": "OUTGOING DAMAGE:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "incoming_damage",
+          "header": "INCOMING DAMAGE:",
+          "value": "100",
+          "generated": true
+        },
+        {
+          "key": "does_reflect",
+          "header": "DOES REFLECT:",
+          "value": "1",
+          "generated": true
+        },
+        {
+          "key": "reflected_spell_amp",
+          "header": "REFLECTED SPELL AMP:",
+          "value": "0"
+        },
+        {
+          "key": "heal_pct",
+          "header": "HEAL PCT:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0",
+          "generated": true
+        }
+      ],
+      "lore": "With the proper focus, Anti-Mage turns innate resistance into calculated retaliation.",
+      "mc": "50",
+      "cd": [
+        "15",
+        "11",
+        "7",
+        "3"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+    },
+    "nyx_assassin_spiked_carapace": {
+      "dname": "Spiked Carapace",
+      "behavior": [
+        "No Target",
+        "Instant Cast"
+      ],
+      "bkbpierce": "No",
+      "dispellable": "No",
+      "desc": "When activated while above ground, Spiked Carapace reflects and negates damage dealt to Nyx Assassin (max once from each source), as well as stunning the source of the damage. Activating Spiked Carapace will not break Vendetta invisibility.\n\nWhile Burrowed, Spiked Carapace instantly stuns nearby enemies when cast.",
+      "attrib": [
+        {
+          "key": "reflect_duration",
+          "header": "REFLECT DURATION:",
+          "value": "2"
+        },
+        {
+          "key": "stun_duration",
+          "header": "STUN DURATION:",
+          "value": [
+            "0.7",
+            "1",
+            "1.3",
+            "1.6"
+          ]
+        },
+        {
+          "key": "damage_reflect_pct",
+          "header": "DAMAGE REFLECTED:",
+          "value": "140%"
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0",
+          "generated": true
+        }
+      ],
+      "lore": "While their carapace is relatively thin, it's guarded by a retractable field of razor-sharp spikes.",
+      "mc": "40",
+      "cd": [
+        "20",
+        "16",
+        "12",
+        "8"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/nyx_assassin_spiked_carapace.png"
+    },
+    "phantom_lancer_doppelwalk": {
+      "dname": "Doppelganger",
+      "behavior": [
+        "Point Target",
+        "AOE"
+      ],
+      "desc": "Phantom Lancer briefly vanishes from the battlefield. After 1 second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 500% bonus damage and deals -80% less damage.\n\nDISPEL TYPE: Basic Dispel",
+      "attrib": [
+        {
+          "key": "illusion_1_damage_out_pct",
+          "header": "ILLUSION 1 DAMAGE OUT PCT:",
+          "value": "-100",
+          "generated": true
+        },
+        {
+          "key": "illusion_1_damage_in_pct",
+          "header": "ILLUSION 1 DAMAGE IN PCT:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "illusion_2_damage_out_pct",
+          "header": "ILLUSION 2 DAMAGE OUT PCT:",
+          "value": "-80",
+          "generated": true
+        },
+        {
+          "key": "illusion_2_damage_in_pct",
+          "header": "ILLUSION 2 DAMAGE IN PCT:",
+          "value": "500",
+          "generated": true
+        },
+        {
+          "key": "target_aoe",
+          "header": "TARGET AREA SIZE:",
+          "value": "325"
+        },
+        {
+          "key": "search_radius",
+          "header": "ILLUSION GATHER RANGE:",
+          "value": "900"
+        },
+        {
+          "key": "delay",
+          "header": "REAPPEAR DELAY:",
+          "value": "1"
+        },
+        {
+          "key": "illusion_duration",
+          "header": "DOPPELGANGER DURATION:",
+          "value": "8"
+        },
+        {
+          "key": "illusion_extended_duration",
+          "header": "ILLUSION DURATION EXTENSION:",
+          "value": "2"
+        },
+        {
+          "key": "illusion_2_amount",
+          "header": "ILLUSION 2 AMOUNT:",
+          "value": "1",
+          "generated": true
+        },
+        {
+          "key": "hp_missing_per_extra_illusion_pct",
+          "header": "HP MISSING PER EXTRA ILLUSION PCT:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "575",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.1",
+          "generated": true
+        }
+      ],
+      "lore": "Dread Magus Vorn's death imbued the Phantom Lancer with the ability to bend and fracture all spectrums of light.",
+      "mc": "70",
+      "cd": [
+        "22",
+        "18",
+        "14",
+        "10"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/phantom_lancer_doppelwalk.png"
+    },
+    "puck_phase_shift": {
+      "dname": "Phase Shift",
+      "behavior": [
+        "No Target",
+        "Channeled"
+      ],
+      "desc": "CHANNELED - Puck briefly shifts into another dimension where it is immune from harm.",
+      "attrib": [
+        {
+          "key": "duration",
+          "header": "DURATION:",
+          "value": [
+            "1",
+            "1.75",
+            "2.5",
+            "3.25"
+          ]
+        },
+        {
+          "key": "abilitychanneltime",
+          "header": "CHANNEL TIME:",
+          "value": [
+            "1",
+            "1.75",
+            "2.5",
+            "3.25"
+          ],
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.01",
+          "generated": true
+        }
+      ],
+      "lore": "With a quip and flash, Puck returns to the alien dimension from whence it came.",
+      "mc": "0",
+      "cd": [
+        "8",
+        "7.5",
+        "7",
+        "6.5"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/puck_phase_shift.png"
+    },
+    "monkey_king_mischief": {
+      "dname": "Mischief",
+      "is_innate": true,
+      "behavior": "No Target",
+      "desc": "Changes Monkey King's shape to deceive opponents, using the environment nearby as inspiration for the disguise. Taking damage, attacking, or using any item or ability breaks Monkey King's disguise. Grants damage immunity for 0.1 seconds upon transforming.",
+      "attrib": [
+        {
+          "key": "movespeed",
+          "header": "BONUS MOVE SPEED:",
+          "value": "8%"
+        },
+        {
+          "key": "reveal_radius",
+          "header": "REVEAL RADIUS:",
+          "value": "200",
+          "generated": true
+        },
+        {
+          "key": "invul_duration",
+          "header": "INVUL DURATION:",
+          "value": "0.1",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0",
+          "generated": true
+        }
+      ],
+      "lore": "Watch out for that tree.",
+      "mc": "0",
+      "cd": "24.5",
+      "img": "/apps/dota2/images/dota_react/abilities/monkey_king_mischief.png"
+    },
+    "ember_spirit_sleight_of_fist": {
+      "dname": "Sleight of Fist",
+      "behavior": [
+        "Point Target",
+        "AOE"
+      ],
+      "dmg_type": "Physical",
+      "bkbpierce": "Yes",
+      "desc": "Ember Spirit dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. Deals bonus damage to heroes.",
+      "attrib": [
+        {
+          "key": "radius",
+          "header": "RADIUS:",
+          "value": [
+            "250",
+            "350",
+            "450",
+            "550"
+          ]
+        },
+        {
+          "key": "bonus_hero_damage",
+          "header": "BONUS HERO DAMAGE:",
+          "value": [
+            "40",
+            "80",
+            "120",
+            "160"
+          ]
+        },
+        {
+          "key": "attack_interval",
+          "header": "ATTACK INTERVAL:",
+          "value": "0.25"
+        },
+        {
+          "key": "creep_damage_penalty",
+          "header": "CREEP DAMAGE PENALTY:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycharges",
+          "header": "MAX CHARGES:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitychargerestoretime",
+          "header": "CHARGE RESTORE TIME:",
+          "value": [
+            "13",
+            "11",
+            "9",
+            "7"
+          ],
+          "generated": true
+        },
+        {
+          "key": "min_enemies_for_double_sleight",
+          "header": "MIN ENEMIES FOR DOUBLE SLEIGHT:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "second_attack_damage_penalty",
+          "header": "SECOND ATTACK DAMAGE PENALTY:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "650",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0",
+          "generated": true
+        }
+      ],
+      "lore": "The studied warrior must whip and weave through its enemies, burning each without pause.",
+      "mc": "75",
+      "cd": [
+        "13",
+        "11",
+        "9",
+        "7"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/ember_spirit_sleight_of_fist.png"
+    },
+    "phoenix_supernova": {
+      "dname": "Supernova",
+      "behavior": "No Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "Yes",
+      "dispellable": "No",
+      "target_team": "Friendly",
+      "target_type": "Hero",
+      "desc": "The Phoenix willingly ends its current life for the chance to be reborn. Transforms into a burning sun that scorches enemies in a huge area. The sun can be destroyed by attacks from enemy Heroes. After 6 seconds the sun explodes, stunning all nearby enemies while restoring Phoenix to full health and mana with refreshed abilities.\n\nDISPEL TYPE: Strong Dispel",
+      "attrib": [
+        {
+          "key": "aura_radius",
+          "header": "RADIUS:",
+          "value": "1200"
+        },
+        {
+          "key": "damage_per_sec",
+          "header": "DAMAGE PER SECOND:",
+          "value": [
+            "50",
+            "80",
+            "110"
+          ]
+        },
+        {
+          "key": "tick_interval",
+          "header": "TICK INTERVAL:",
+          "value": "0.2",
+          "generated": true
+        },
+        {
+          "key": "stun_duration",
+          "header": "STUN DURATION:",
+          "value": [
+            "1.6",
+            "2",
+            "2.4"
+          ]
+        },
+        {
+          "key": "max_hero_attacks",
+          "header": "ATTACKS TO DESTROY:",
+          "value": [
+            "6",
+            "8",
+            "10"
+          ]
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "450",
+          "generated": true
+        },
+        {
+          "key": "abilityduration",
+          "header": "DURATION:",
+          "value": "6"
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.01",
+          "generated": true
+        }
+      ],
+      "lore": "The solar crucible of a Supernova may be fatal, yet from its flames arise new beacons to wander infinity.",
+      "mc": [
+        "150",
+        "200",
+        "250"
+      ],
+      "cd": "120",
+      "img": "/apps/dota2/images/dota_react/abilities/phoenix_supernova.png"
+    },
+    "life_stealer_infest": {
+      "dname": "Infest",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "Yes",
+      "dispellable": "No",
+      "target_team": [],
+      "target_type": [],
+      "desc": "Lifestealer infests the body of a target unit, becoming undetectable, and healing for a portion of his max hitpoints every second while inside. He can then explode from the host body, dealing damage to nearby enemies. If the infested unit is an enemy creep or a neutral creep, he can take control of the unit's ability to move and attack, and the creep loses a portion of their max hitpoints over time. Does not work on enemy heroes.\n\nDISPEL TYPE: Basic Dispel",
+      "attrib": [
+        {
+          "key": "radius",
+          "header": "DAMAGE RADIUS:",
+          "value": "700"
+        },
+        {
+          "key": "damage",
+          "header": "DAMAGE:",
+          "value": [
+            "150",
+            "275",
+            "400"
+          ]
+        },
+        {
+          "key": "bonus_movement_speed",
+          "header": "MOVEMENT SPEED:",
+          "value": [
+            "15%",
+            "20%",
+            "25%"
+          ]
+        },
+        {
+          "key": "bonus_health",
+          "header": "HEALTH BONUS:",
+          "value": [
+            "400",
+            "800",
+            "1200"
+          ]
+        },
+        {
+          "key": "self_regen",
+          "header": "SELF MAX HP REGEN:",
+          "value": [
+            "3%",
+            "4%",
+            "5%"
+          ]
+        },
+        {
+          "key": "infest_duration_enemy",
+          "header": "ENEMY DURATION:",
+          "value": "0"
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "150",
+          "generated": true
+        },
+        {
+          "key": "attack_rate_enemy",
+          "header": "ATTACK RATE:",
+          "value": "0"
+        },
+        {
+          "key": "open_wounds_duration_pct",
+          "header": "OPEN WOUNDS DURATION PCT:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "creep_max_hp_drain_pct_per_second",
+          "header": "CREEP MAX HP LOSS / SEC:",
+          "value": [
+            "1.5%",
+            "0.75%",
+            "0%"
+          ]
+        },
+        {
+          "key": "can_target_ancients",
+          "header": "CAN TARGET ANCIENTS:",
+          "value": "1",
+          "generated": true
+        },
+        {
+          "key": "dot_damage_as_pct_of_damage_dealt",
+          "header": "REMAINING HEALTH AS TOTAL DAMAGE:",
+          "value": "0%"
+        },
+        {
+          "key": "dot_duration",
+          "header": "DAMAGE OVER TIME DURATION:",
+          "value": "0"
+        },
+        {
+          "key": "dot_tick_interval",
+          "header": "DOT TICK INTERVAL:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.2",
+          "generated": true
+        }
+      ],
+      "lore": "With this infestation, N'aix consumes the life blood of the host, restoring him back to full unholy power.",
+      "mc": [
+        "100",
+        "125",
+        "150"
+      ],
+      "cd": [
+        "80",
+        "65",
+        "50"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/life_stealer_infest.png"
+    },
+    "tusk_snowball": {
+      "dname": "Snowball",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "dispellable": "No",
+      "target_team": "Enemy",
+      "target_type": [
+        "Hero",
+        "Basic"
+      ],
+      "desc": "Tusk begins rolling into a snowball. Allies within a 325 radius can also be added to the snowball by right-clicking on them, even while the snowball is moving. Once launched, any enemies caught in the snowball's path will be stunned and take damage. Each allied Hero in the snowball will add to its damage and stun duration.",
+      "attrib": [
+        {
+          "key": "snowball_damage",
+          "header": "BASE DAMAGE:",
+          "value": [
+            "80",
+            "140",
+            "200",
+            "260"
+          ]
+        },
+        {
+          "key": "snowball_speed",
+          "header": "SNOWBALL SPEED:",
+          "value": [
+            "575",
+            "600",
+            "625",
+            "650"
+          ]
+        },
+        {
+          "key": "snowball_damage_bonus",
+          "header": "BONUS DAMAGE PER ALLY:",
+          "value": [
+            "40",
+            "65",
+            "90",
+            "115"
+          ]
+        },
+        {
+          "key": "stun_duration",
+          "header": "STUN DURATION:",
+          "value": [
+            "0.6",
+            "0.8",
+            "1",
+            "1.2"
+          ]
+        },
+        {
+          "key": "stun_duration_bonus",
+          "header": "STUN DURATION PER ALLY:",
+          "value": "0.2"
+        },
+        {
+          "key": "snowball_windup_radius",
+          "header": "SNOWBALL WINDUP RADIUS:",
+          "value": "100",
+          "generated": true
+        },
+        {
+          "key": "snowball_duration",
+          "header": "SNOWBALL DURATION:",
+          "value": "3",
+          "generated": true
+        },
+        {
+          "key": "snowball_radius",
+          "header": "SNOWBALL RADIUS:",
+          "value": "200",
+          "generated": true
+        },
+        {
+          "key": "snowball_grow_rate",
+          "header": "SNOWBALL GROW RATE:",
+          "value": "40",
+          "generated": true
+        },
+        {
+          "key": "snowball_windup",
+          "header": "LAUNCH TIME:",
+          "value": "3"
+        },
+        {
+          "key": "snowball_grab_radius",
+          "header": "GATHER RADIUS:",
+          "value": "325"
+        },
+        {
+          "key": "snowball_speed_bonus",
+          "header": "SNOWBALL SPEED BONUS:",
+          "value": "50",
+          "generated": true
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "1150",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.1",
+          "generated": true
+        }
+      ],
+      "lore": "Tales are still told of the wild feat that ended the grand brawl at White Fields.",
+      "mc": "75",
+      "cd": [
+        "21",
+        "19",
+        "17",
+        "15"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/tusk_snowball.png"
+    },
+    "alchemist_chemical_rage": {
+      "dname": "Chemical Rage",
+      "behavior": "No Target",
+      "dispellable": "No",
+      "desc": "Alchemist causes his Ogre to enter a chemically induced rage, reducing base attack cooldown and increasing movement speed and health regeneration.\n\nDISPEL TYPE: Basic Dispel",
+      "attrib": [
+        {
+          "key": "duration",
+          "header": "DURATION:",
+          "value": "30"
+        },
+        {
+          "key": "transformation_time",
+          "header": "TRANSFORMATION TIME:",
+          "value": "0.35",
+          "generated": true
+        },
+        {
+          "key": "base_attack_time",
+          "header": "BASE ATTACK TIME:",
+          "value": [
+            "1.2",
+            "1.1",
+            "1"
+          ]
+        },
+        {
+          "key": "bonus_health",
+          "header": "BONUS HEALTH:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "bonus_health_regen",
+          "header": "BONUS HEALTH REGEN:",
+          "value": [
+            "50",
+            "85",
+            "120"
+          ]
+        },
+        {
+          "key": "bonus_mana_regen",
+          "header": "BONUS MANA REGEN:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "bonus_movespeed",
+          "header": "BONUS MOVE SPEED:",
+          "value": [
+            "20",
+            "30",
+            "40"
+          ]
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0",
+          "generated": true
+        }
+      ],
+      "lore": "The brew Razzil gave to the Ogre during their prison bust has become a useful potion in the midst of combat.",
+      "mc": [
+        "50",
+        "75",
+        "100"
+      ],
+      "cd": "60",
+      "img": "/apps/dota2/images/dota_react/abilities/alchemist_chemical_rage.png"
+    },
+    "lone_druid_true_form": {
+      "dname": "True Form",
+      "behavior": "No Target",
+      "dispellable": "No",
+      "desc": "Lone Druid morphs himself into a raging bear, losing his ranged advantage, but gaining bonus armor, bonus health, and bonus attack damage.",
+      "attrib": [
+        {
+          "key": "bonus_armor",
+          "header": "BONUS ARMOR:",
+          "value": [
+            "10",
+            "15",
+            "20"
+          ]
+        },
+        {
+          "key": "bonus_hp",
+          "header": "BONUS HP:",
+          "value": [
+            "500",
+            "1000",
+            "1500"
+          ]
+        },
+        {
+          "key": "bonus_attack_damage",
+          "header": "BONUS ATTACK DAMAGE:",
+          "value": [
+            "50",
+            "90",
+            "130"
+          ]
+        },
+        {
+          "key": "duration",
+          "header": "DURATION:",
+          "value": "25"
+        },
+        {
+          "key": "transformation_time",
+          "header": "TRANSFORM TIME:",
+          "value": "1.933"
+        },
+        {
+          "key": "transform_bear",
+          "header": "TRANSFORM BEAR:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "bonus_slow_resistance",
+          "header": "BONUS SLOW RESISTANCE:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0",
+          "generated": true
+        }
+      ],
+      "lore": "The mighty bear is the king of the forest, possessing the throne through raw power.",
+      "mc": "80",
+      "cd": [
+        "60",
+        "55",
+        "50"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/lone_druid_true_form.png"
+    },
+    "naga_siren_mirror_image": {
+      "dname": "Mirror Image",
+      "behavior": "No Target",
+      "desc": "Creates multiple images of Naga Siren under her control.\n\nDISPEL TYPE: Basic Dispel",
+      "attrib": [
+        {
+          "key": "illusion_duration",
+          "header": "IMAGE DURATION:",
+          "value": "26"
+        },
+        {
+          "key": "outgoing_damage",
+          "header": "OUTGOING DAMAGE:",
+          "value": [
+            "-75",
+            "-70",
+            "-65",
+            "-60"
+          ],
+          "generated": true
+        },
+        {
+          "key": "outgoing_damage_tooltip",
+          "header": "IMAGE DAMAGE:",
+          "value": [
+            "25%",
+            "30%",
+            "35%",
+            "40%"
+          ]
+        },
+        {
+          "key": "incoming_damage",
+          "header": "INCOMING DAMAGE:",
+          "value": "250",
+          "generated": true
+        },
+        {
+          "key": "tooltip_incoming_damage_total_pct",
+          "header": "IMAGE DAMAGE TAKEN:",
+          "value": "350%"
+        },
+        {
+          "key": "images_count",
+          "header": "IMAGE COUNT:",
+          "value": "3"
+        },
+        {
+          "key": "invuln_duration",
+          "header": "INVULN DURATION:",
+          "value": "0.5",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.4",
+          "generated": true
+        }
+      ],
+      "lore": "Slithice, while being strong in her own right, is notoriously hard to track down.",
+      "mc": [
+        "75",
+        "90",
+        "105",
+        "120"
+      ],
+      "cd": [
+        "40",
+        "35",
+        "30",
+        "25"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/naga_siren_mirror_image.png"
+    },
+    "chaos_knight_phantasm": {
+      "dname": "Phantasm",
+      "behavior": "No Target",
+      "target_team": "Friendly",
+      "target_type": "Hero",
+      "desc": "Summons several phantasmal copies of the Chaos Knight from alternate dimensions. The phantasms are illusions that deal 60% damage, but take 350% damage.\nDISPEL TYPE: Basic Dispel",
+      "attrib": [
+        {
+          "key": "images_count",
+          "header": "NUMBER OF PHANTASMS:",
+          "value": "3"
+        },
+        {
+          "key": "illusion_duration",
+          "header": "PHANTASM DURATION:",
+          "value": "30"
+        },
+        {
+          "key": "outgoing_damage",
+          "header": "OUTGOING DAMAGE:",
+          "value": [
+            "-40",
+            "-20",
+            "0"
+          ],
+          "generated": true
+        },
+        {
+          "key": "outgoing_damage_tooltip",
+          "header": "PHANTASM DAMAGE:",
+          "value": [
+            "60%",
+            "80%",
+            "100%"
+          ]
+        },
+        {
+          "key": "incoming_damage",
+          "header": "INCOMING DAMAGE:",
+          "value": "250",
+          "generated": true
+        },
+        {
+          "key": "incoming_damage_tooltip",
+          "header": "PHANTASM DAMAGE TAKEN:",
+          "value": "350%"
+        },
+        {
+          "key": "invuln_duration",
+          "header": "INVULN DURATION:",
+          "value": "0.5",
+          "generated": true
+        },
+        {
+          "key": "vision_radius",
+          "header": "VISION RADIUS:",
+          "value": "400",
+          "generated": true
+        },
+        {
+          "key": "magic_resistance",
+          "header": "MAGIC RESISTANCE:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "bonus_illusion_chance",
+          "header": "BONUS ILLUSION CHANCE:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "bonus_illusion_count",
+          "header": "BONUS ILLUSION COUNT:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.4",
+          "generated": true
+        }
+      ],
+      "lore": "Drawing on his battles fought across many worlds and many times, phantasms of the Chaos Knight rise up to quell all who oppose him.",
+      "mc": [
+        "100",
+        "200",
+        "300"
+      ],
+      "cd": [
+        "85",
+        "80",
+        "75"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/chaos_knight_phantasm.png"
+    },
+    "sniper_assassinate": {
+      "dname": "Assassinate",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "dispellable": "No",
+      "target_team": "Enemy",
+      "target_type": [
+        "Hero",
+        "Basic"
+      ],
+      "desc": "Sniper locks onto a target enemy unit and, after a short aiming duration, fires a devastating shot that deals Sniper's attack damage plus bonus damage at long range and mini-stuns the target. Whenever Sniper kills an enemy hero, Assassinate is refreshed.",
+      "attrib": [
+        {
+          "key": "damage",
+          "header": "DAMAGE:",
+          "value": [
+            "300",
+            "400",
+            "500"
+          ]
+        },
+        {
+          "key": "projectile_speed",
+          "header": "PROJECTILE SPEED:",
+          "value": "2500",
+          "generated": true
+        },
+        {
+          "key": "cooldown_reduction_on_kill",
+          "header": "COOLDOWN REDUCTION ON KILL:",
+          "value": [
+            "0",
+            "5",
+            "10"
+          ],
+          "generated": true
+        },
+        {
+          "key": "attack_factor",
+          "header": "ATTACK FACTOR:",
+          "value": "0",
+          "generated": true
+        },
+        {
+          "key": "attack_factor_tooltip",
+          "header": "ATTACK FACTOR TOOLTIP:",
+          "value": "100",
+          "generated": true
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "3000",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "AIM DURATION:",
+          "value": "2"
+        }
+      ],
+      "lore": "In order to fulfill the prophecy and return to his home town, Kardel must make another shot as perfect as the one on the day of his ancient test.",
+      "mc": "175",
+      "cd": [
+        "20",
+        "15",
+        "10"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/sniper_assassinate.png"
+    },
+    "windrunner_shackleshot": {
+      "dname": "Shackleshot",
+      "behavior": "Unit Target",
+      "bkbpierce": "No",
+      "dispellable": "Strong Dispels Only",
+      "target_team": "Enemy",
+      "target_type": [
+        "Hero",
+        "Basic"
+      ],
+      "desc": "Shackles the target to an enemy unit or tree in a line directly behind it. If no unit or tree is present, the stun duration is reduced to 0.6.",
+      "dmg": "0",
+      "attrib": [
+        {
+          "key": "fail_stun_duration",
+          "header": "FAIL STUN DURATION:",
+          "value": "0.6",
+          "generated": true
+        },
+        {
+          "key": "stun_duration",
+          "header": "SHACKLE DURATION:",
+          "value": [
+            "1.75",
+            "2.25",
+            "2.75",
+            "3.25"
+          ]
+        },
+        {
+          "key": "shackle_distance",
+          "header": "SHACKLE DISTANCE:",
+          "value": "575",
+          "generated": true
+        },
+        {
+          "key": "arrow_speed",
+          "header": "ARROW SPEED:",
+          "value": "1650",
+          "generated": true
+        },
+        {
+          "key": "shackle_count",
+          "header": "SHACKLE COUNT:",
+          "value": "1",
+          "generated": true
+        },
+        {
+          "key": "shackle_angle",
+          "header": "SHACKLE ANGLE:",
+          "value": "23",
+          "generated": true
+        },
+        {
+          "key": "abilitycastrange",
+          "header": "CAST RANGE:",
+          "value": "800",
+          "generated": true
+        },
+        {
+          "key": "abilitycastpoint",
+          "header": "CAST TIME:",
+          "value": "0.15",
+          "generated": true
+        }
+      ],
+      "lore": "Windranger's variety of bow skills includes an arrow with thick ropes attached to encumber any escaping target.",
+      "mc": [
+        "70",
+        "80",
+        "90",
+        "100"
+      ],
+      "cd": [
+        "16",
+        "14",
+        "12",
+        "10"
+      ],
+      "img": "/apps/dota2/images/dota_react/abilities/windrunner_shackleshot.png"
+    }
+  }
+}

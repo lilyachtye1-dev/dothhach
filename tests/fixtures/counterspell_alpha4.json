@@ -1,0 +1,12 @@
+{
+  "source": "User killsteal.log, 2026-09-29; Counterspell entity 3105068429568",
+  "scope": "Actual logged wall-clock event order and timing only. Test fills readiness, threat windows, frames, CD magnitude and fake input synthetically; it does not replay a real game.",
+  "events": [
+    {"wall": "00:30:18.097", "seconds": 1818.097, "event": "SENT"},
+    {"wall": "00:30:18.114", "seconds": 1818.114, "event": "CD_CONFIRMED"},
+    {"wall": "00:30:48.016", "seconds": 1848.016, "event": "SENT"},
+    {"wall": "00:30:49.530", "seconds": 1849.530, "event": "QUARANTINE_NO_CD"}
+  ],
+  "later_blocked": ["00:31:14.429", "00:32:07.675", "00:32:21.627"],
+  "unknown": "Why the second key pair did not produce observable cooldown; selected unit and the game's command consumption are not decoded by this log."
+}

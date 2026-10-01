@@ -1,0 +1,1330 @@
+LAST HIT alpha4 — 2026-09-29
+753 tests discovered; 753 PASS; 0 SKIP. Source suite: 29.986s.
+30 alpha4 regressions: actual entity scan above highest index; real target capture
+through planner for melee/ranged/flagbearer/siege; owner-checked live stat fields;
+manual-pause option, helper independent of activation, hold/toggle controls.
+Target-only reader regression updated: missing ARMOR is fatal; missing target
+attack-damage/timing fields is no longer a reason to hide a valid creep.
+Full C#5/x64/.NET 4.8 WPF compilation with warnings-as-errors: PASS.
+compileall / git diff --check: PASS.
+Windows/Dota alpha4 run: NOT PERFORMED. Tests use synthetic memory/input.
+Modifier field encodings/semantics are not runtime-proven. IAS coverage is partial.
+No claim of exact hits, full FoW, internal AttackTarget, or Umbrella equivalence.
+
+test_chaos_field_is_not_mistaken_for_m_h_target (test_alpha6.ChaosDiagnosticTests.test_chaos_field_is_not_mistaken_for_m_h_target) ... ok
+test_no_bar_mark_required_to_observe_chaos_cast (test_alpha6.ChaosDiagnosticTests.test_no_bar_mark_required_to_observe_chaos_cast) ... ok
+test_phase_end_and_cd_never_guess_chaos_target (test_alpha6.ChaosDiagnosticTests.test_phase_end_and_cd_never_guess_chaos_target) ... ok
+test_unreadable_chaos_diagnostic_does_not_claim_cast_read (test_alpha6.ChaosDiagnosticTests.test_unreadable_chaos_diagnostic_does_not_claim_cast_read) ... ok
+test_known_manual_cast_may_be_interrupted_by_defense (test_alpha6.DefensiveBusyTests.test_known_manual_cast_may_be_interrupted_by_defense) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · пауза: герой кастует/занят: состояние неизвестно | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Manta Style ← Assassinate · fake backend only]
+ok
+test_unknown_busy_state_never_forced (test_alpha6.DefensiveBusyTests.test_unknown_busy_state_never_forced) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · пауза: герой кастует/занят: состояние неизвестно | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_alt_selfcast_opt_in_defaults_off_and_preserves_module_state (test_alpha6.MenuPreservationTests.test_alt_selfcast_opt_in_defaults_off_and_preserves_module_state) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_bad_preserve_flag_rejected_atomically (test_alpha6.MenuPreservationTests.test_bad_preserve_flag_rejected_atomically) ... ok
+test_close_message_without_observed_open_has_bounded_focus_grace (test_alpha6.MenuPreservationTests.test_close_message_without_observed_open_has_bounded_focus_grace) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+[DODGER AUTO OFF] Выключен
+ok
+test_close_resumes_existing_state_after_focus_returns (test_alpha6.MenuPreservationTests.test_close_resumes_existing_state_after_focus_returns) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+[DODGER SENT · Manta Style ← Assassinate · fake backend only]
+ok
+test_close_without_focus_expires_to_off (test_alpha6.MenuPreservationTests.test_close_without_focus_expires_to_off) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+[DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Dota не в фокусе]
+ok
+test_end_in_menu_remains_a_hard_stop (test_alpha6.MenuPreservationTests.test_end_in_menu_remains_a_hard_stop) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Нажато End]
+ok
+test_explicit_module_off_commands_are_independent (test_alpha6.MenuPreservationTests.test_explicit_module_off_commands_are_independent) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_hero_change_in_menu_stays_off_after_close (test_alpha6.MenuPreservationTests.test_hero_change_in_menu_stays_off_after_close) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+[DODGER AUTO OFF] Выключен
+ok
+test_insert_before_menu_message_is_pause_not_off (test_alpha6.MenuPreservationTests.test_insert_before_menu_message_is_pause_not_off) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_invalid_menu_identity_is_rejected_before_any_control_change (test_alpha6.MenuPreservationTests.test_invalid_menu_identity_is_rejected_before_any_control_change) ... ok
+test_menu_open_holds_both_states_without_input (test_alpha6.MenuPreservationTests.test_menu_open_holds_both_states_without_input) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_native_menu_focus_before_visibility_message_does_not_disarm (test_alpha6.MenuPreservationTests.test_native_menu_focus_before_visibility_message_does_not_disarm) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_open_close_never_arms_an_off_module (test_alpha6.MenuPreservationTests.test_open_close_never_arms_an_off_module) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_pending_ks_is_in_native_dto (test_alpha6.MenuPreservationTests.test_pending_ks_is_in_native_dto) ... ok
+test_source_changes_preserve_armed_state_in_menu (test_alpha6.MenuPreservationTests.test_source_changes_preserve_armed_state_in_menu) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_stale_menu_data_disarms_instead_of_restoring_old_arm (test_alpha6.MenuPreservationTests.test_stale_menu_data_disarms_instead_of_restoring_old_arm) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+[DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Данные/геометрия недоступны более 2.0 сек]
+ok
+test_ui_enter_tab_do_not_disarm_while_menu_is_open (test_alpha6.MenuPreservationTests.test_ui_enter_tab_do_not_disarm_while_menu_is_open) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: меню / ожидание фокуса; включённое состояние сохранено]
+ok
+test_cancelled_phase_has_no_retained_guard (test_alpha6.PhaseGuardTests.test_cancelled_phase_has_no_retained_guard) ... ok
+test_changed_override_during_phase_rejects_prediction (test_alpha6.PhaseGuardTests.test_changed_override_during_phase_rejects_prediction) ... ok
+test_close_cast_selects_counterspell_before_release (test_alpha6.PhaseGuardTests.test_close_cast_selects_counterspell_before_release) ... ok
+test_confirmation_then_cd_reset_still_cannot_repeat_phase_or_flight (test_alpha6.PhaseGuardTests.test_confirmation_then_cd_reset_still_cannot_repeat_phase_or_flight) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":2.0,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":2.0,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_guard","at":10.04,"evidence":"local_mark_phase","local":"0x20000","source":"0x30000","cast_point":2.0,"guard_point":2.0,"earliest":11.897619047619047,"latest":12.543243243243245}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: рано / защита не перекрывает весь интервал | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 1; оценка, не projectile manager · Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён) | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён); path=local_mark"]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER CD подтверждён · Counterspell · активация, не подтверждение отражения]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ожидание CD / защитное окно; KS приостановлен | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 1; оценка, не projectile manager · Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён) | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён); path=local_mark"]
+[DODGER OBS #6] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":2.0,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #7] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":2.0,"guard_point":2.0,"earliest":11.857619047619048,"latest":12.393243243243244}
+ok
+test_cursor_selfcast_remains_default_and_requires_safe_screen (test_alpha6.PhaseGuardTests.test_cursor_selfcast_remains_default_and_requires_safe_screen) ... ok
+test_far_cast_remains_launch_only (test_alpha6.PhaseGuardTests.test_far_cast_remains_launch_only) ... ok
+test_five_real_close_cast_timings_with_modelled_distance_reach_phase_choice (test_alpha6.PhaseGuardTests.test_five_real_close_cast_timings_with_modelled_distance_reach_phase_choice) ... ok
+test_missing_override_does_not_invent_phase_timing (test_alpha6.PhaseGuardTests.test_missing_override_does_not_invent_phase_timing) ... ok
+test_no_manta_or_self_item_is_used_before_release (test_alpha6.PhaseGuardTests.test_no_manta_or_self_item_is_used_before_release) ... ok
+test_observation_gap_discards_timing_calibration (test_alpha6.PhaseGuardTests.test_observation_gap_discards_timing_calibration) ... ok
+test_one_observed_duration_is_not_enough_for_unknown_cast_point (test_alpha6.PhaseGuardTests.test_one_observed_duration_is_not_enough_for_unknown_cast_point) ... ok
+test_phase_and_flight_share_exact_same_id (test_alpha6.PhaseGuardTests.test_phase_and_flight_share_exact_same_id) ... ok
+test_phase_proof_has_75ms_limit_and_sniper_only (test_alpha6.PhaseGuardTests.test_phase_proof_has_75ms_limit_and_sniper_only) ... ok
+test_reader_to_real_guard_one_e_through_phase_and_launch (test_alpha6.PhaseGuardTests.test_reader_to_real_guard_one_e_through_phase_and_launch) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":2.0,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":2.0,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_guard","at":10.04,"evidence":"local_mark_phase","local":"0x20000","source":"0x30000","cast_point":2.0,"guard_point":2.0,"earliest":11.897619047619047,"latest":12.543243243243245}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: рано / защита не перекрывает весь интервал | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 1; оценка, не projectile manager · Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён) | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён); path=local_mark"]
+[DODGER SENT · Counterspell ← Assassinate · защитный quickcast; ручные клавиши/мышь не паузят; ожидается CD]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ожидание CD / защитное окно; KS приостановлен | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 1; оценка, не projectile manager · Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён) | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён); path=local_mark"]
+[DODGER OBS #6] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":2.0,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #7] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":2.0,"guard_point":2.0,"earliest":11.857619047619048,"latest":12.393243243243244}
+ok
+test_self_item_planning_no_longer_requires_camera_on_hero (test_alpha6.PhaseGuardTests.test_self_item_planning_no_longer_requires_camera_on_hero) ... ok
+test_unknown_cast_point_can_use_two_consistent_observed_durations (test_alpha6.PhaseGuardTests.test_unknown_cast_point_can_use_two_consistent_observed_durations) ... ok
+test_unknown_mark_or_foreign_target_does_not_create_guard (test_alpha6.PhaseGuardTests.test_unknown_mark_or_foreign_target_does_not_create_guard) ... ok
+test_zero_or_invalid_override_rejects_phase_prediction (test_alpha6.PhaseGuardTests.test_zero_or_invalid_override_rejects_phase_prediction) ... ok
+test_aggregate_only_unknown_modifier_is_not_guessed (test_alpha6.PriorityInputTests.test_aggregate_only_unknown_modifier_is_not_guessed) ... ok
+test_all_six_modifiers_are_neutralized_and_restored (test_alpha6.PriorityInputTests.test_all_six_modifiers_are_neutralized_and_restored) ... ok
+test_alt_selfcast_never_emits_alt_f4_or_other_function_chords (test_alpha6.PriorityInputTests.test_alt_selfcast_never_emits_alt_f4_or_other_function_chords) ... ok
+test_cursor_change_in_final_guard_skips_default_self_cast (test_alpha6.PriorityInputTests.test_cursor_change_in_final_guard_skips_default_self_cast) ... ok
+test_default_self_item_retains_working_cursor_cast_without_alt_requirement (test_alpha6.PriorityInputTests.test_default_self_item_retains_working_cursor_cast_without_alt_requirement) ... ok
+test_hard_keys_win_insert_focus_and_arming_still_block (test_alpha6.PriorityInputTests.test_hard_keys_win_insert_focus_and_arming_still_block) ... ok
+test_held_own_key_remains_untouched (test_alpha6.PriorityInputTests.test_held_own_key_remains_untouched) ... ok
+test_invalid_defensive_contract_does_not_fall_back_to_unguarded_input (test_alpha6.PriorityInputTests.test_invalid_defensive_contract_does_not_fall_back_to_unguarded_input) ... ok
+test_monitor_ignores_injected_and_non_modifier_events (test_alpha6.PriorityInputTests.test_monitor_ignores_injected_and_non_modifier_events) ... ok
+test_monitor_loss_after_key_pair_fails_closed (test_alpha6.PriorityInputTests.test_monitor_loss_after_key_pair_fails_closed) ... ok
+test_native_menu_identity_checks_both_hwnd_and_pid (test_alpha6.PriorityInputTests.test_native_menu_identity_checks_both_hwnd_and_pid) ... ok
+test_no_opt_in_keeps_ks_mouse_guard (test_alpha6.PriorityInputTests.test_no_opt_in_keeps_ks_mouse_guard) ... ok
+test_other_injected_modifier_state_is_not_assumed_physical (test_alpha6.PriorityInputTests.test_other_injected_modifier_state_is_not_assumed_physical) ... ok
+test_other_letters_and_both_mouse_buttons_do_not_block_e (test_alpha6.PriorityInputTests.test_other_letters_and_both_mouse_buttons_do_not_block_e) ... ok
+test_partial_selfcast_releases_synthetic_alt_and_stops (test_alpha6.PriorityInputTests.test_partial_selfcast_releases_synthetic_alt_and_stops) ... ok
+test_physical_press_before_async_state_update_is_not_treated_as_empty (test_alpha6.PriorityInputTests.test_physical_press_before_async_state_update_is_not_treated_as_empty) ... ok
+test_real_release_during_send_is_not_restored_from_old_snapshot (test_alpha6.PriorityInputTests.test_real_release_during_send_is_not_restored_from_old_snapshot) ... ok
+test_release_racing_restore_is_reconciled (test_alpha6.PriorityInputTests.test_release_racing_restore_is_reconciled) ... ok
+test_right_ctrl_alt_have_extended_flag_on_release_and_restore (test_alpha6.PriorityInputTests.test_right_ctrl_alt_have_extended_flag_on_release_and_restore) ... ok
+test_self_items_use_alt_slot_without_cursor_even_offscreen (test_alpha6.PriorityInputTests.test_self_items_use_alt_slot_without_cursor_even_offscreen) ... ok
+test_selfcast_requires_physical_observer (test_alpha6.PriorityInputTests.test_selfcast_requires_physical_observer) ... ok
+test_selfcast_restores_physical_alt_and_shift (test_alpha6.PriorityInputTests.test_selfcast_restores_physical_alt_and_shift) ... ok
+test_stale_caster_even_with_fresh_aim_rejects (test_alpha6.PriorityInputTests.test_stale_caster_even_with_fresh_aim_rejects) ... ok
+test_unobserved_or_stale_modifier_state_skips_before_input (test_alpha6.PriorityInputTests.test_unobserved_or_stale_modifier_state_skips_before_input) ... ok
+test_missing_abilities_do_not_verify_item_only_activity (test_alpha7.ActivityReaderTests.test_missing_abilities_do_not_verify_item_only_activity) ... ok
+test_non_profile_active_item_has_reader_verified_activity (test_alpha7.ActivityReaderTests.test_non_profile_active_item_has_reader_verified_activity) ... ok
+test_non_profile_hero_spell_has_reader_verified_activity (test_alpha7.ActivityReaderTests.test_non_profile_hero_spell_has_reader_verified_activity) ... ok
+test_unknown_ability_is_not_masked_by_later_known_busy (test_alpha7.ActivityReaderTests.test_unknown_ability_is_not_masked_by_later_known_busy) ... ok
+test_unknown_item_is_not_masked_by_known_hero_cast (test_alpha7.ActivityReaderTests.test_unknown_item_is_not_masked_by_known_hero_cast) ... ok
+test_explicit_unknown_cannot_be_overridden_by_legacy_name (test_alpha7.BusyServiceTests.test_explicit_unknown_cannot_be_overridden_by_legacy_name) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · пауза: герой кастует/занят: состояние неизвестно | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_truthy_string_is_not_verification (test_alpha7.BusyServiceTests.test_truthy_string_is_not_verification) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · пауза: герой кастует/занят: состояние неизвестно | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_verified_non_profile_manual_cast_can_be_interrupted (test_alpha7.BusyServiceTests.test_verified_non_profile_manual_cast_can_be_interrupted) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · пауза: герой кастует/занят: состояние неизвестно | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Manta Style ← Assassinate · fake backend only]
+ok
+test_blink_then_release_can_select_defense (test_alpha7.PhaseContinuityTests.test_blink_then_release_can_select_defense) ... ok
+test_blink_with_absent_mark_never_preserves_cast (test_alpha7.PhaseContinuityTests.test_blink_with_absent_mark_never_preserves_cast) ... ok
+test_blink_with_changed_mark_never_rebinds (test_alpha7.PhaseContinuityTests.test_blink_with_changed_mark_never_rebinds) ... ok
+test_cached_mark_cannot_authorize_phase_reposition_in_tracker (test_alpha7.PhaseContinuityTests.test_cached_mark_cannot_authorize_phase_reposition_in_tracker) ... ok
+test_gap_has_explicit_diagnostic (test_alpha7.PhaseContinuityTests.test_gap_has_explicit_diagnostic) ... ok
+test_owner_failure_is_not_retryable (test_alpha7.PhaseContinuityTests.test_owner_failure_is_not_retryable) ... ok
+test_phase_blink_forces_scan_and_preserves_same_threat_id (test_alpha7.PhaseContinuityTests.test_phase_blink_forces_scan_and_preserves_same_threat_id) ... ok
+test_phase_modifier_vector_race_pauses_then_fresh_same_mark_recovers (test_alpha7.PhaseContinuityTests.test_phase_modifier_vector_race_pauses_then_fresh_same_mark_recovers) ... ok
+test_reader_to_real_sender_once_after_blink_under_held_qr_item (test_alpha7.PhaseContinuityTests.test_reader_to_real_sender_once_after_blink_under_held_qr_item) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":2.0,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":2.0,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_guard","at":10.04,"evidence":"local_mark_phase","local":"0x20000","source":"0x30000","cast_point":2.0,"guard_point":2.0,"earliest":12.151587301587302,"latest":12.975675675675676}
+[DODGER OBS #6] {"kind":"tracking_change","at":10.8,"local":"0x20000","reason":"phase_reposition_revalidated","distance":600.0,"previous_at":10.76}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: рано / защита не перекрывает весь интервал | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 1; оценка, не projectile manager · Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён) | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён); path=local_mark"]
+[DODGER OBS #7] {"kind":"local_mark","at":11.04,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"unknown":"modifier changed during read"}
+[DODGER OBS #8] {"kind":"tracking_retry","at":11.04,"reason":"modifier list changed during phase; fresh retry required","use_for_input":false}
+[DODGER OBS #9] {"kind":"local_mark","at":11.08,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER SENT · Counterspell ← Assassinate · защитный quickcast; ручные клавиши/мышь не паузят; ожидается CD]
+[DODGER CD подтверждён · Counterspell · активация, не подтверждение отражения]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ожидание CD / защитное окно; KS приостановлен | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 1; оценка, не projectile manager · Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён) | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: близкий каст на вас · предзащита (каст ещё может быть отменён); path=local_mark"]
+[DODGER OBS #10] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":2.0,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #11] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":2.0,"guard_point":2.0,"earliest":11.921111111111111,"latest":12.501351351351351}
+ok
+test_real_missed_cast_timestamps_with_modelled_blink_reach_choice (test_alpha7.PhaseContinuityTests.test_real_missed_cast_timestamps_with_modelled_blink_reach_choice) ... ok
+test_repeated_race_does_not_extend_150ms_continuity (test_alpha7.PhaseContinuityTests.test_repeated_race_does_not_extend_150ms_continuity) ... ok
+test_retry_cannot_create_launch_across_unreadable_release (test_alpha7.PhaseContinuityTests.test_retry_cannot_create_launch_across_unreadable_release) ... ok
+test_retry_then_different_token_drops_episode (test_alpha7.PhaseContinuityTests.test_retry_then_different_token_drops_episode) ... ok
+test_retry_then_known_foreign_target_drops_episode (test_alpha7.PhaseContinuityTests.test_retry_then_known_foreign_target_drops_episode) ... ok
+test_torn_modifier_after_launch_still_drops_old_flight (test_alpha7.PhaseContinuityTests.test_torn_modifier_after_launch_still_drops_old_flight) ... ok
+test_direct_flight_drops_when_ability_serial_changes (test_assassinate_mark.DirectClockTests.test_direct_flight_drops_when_ability_serial_changes) ... ok
+test_direct_handle_path_also_accepts_matching_release_clock (test_assassinate_mark.DirectClockTests.test_direct_handle_path_also_accepts_matching_release_clock) ... ok
+test_mark_evidence_has_tighter_freshness_than_regular_frame (test_assassinate_mark.DirectClockTests.test_mark_evidence_has_tighter_freshness_than_regular_frame) ... ok
+test_positive_clock_change_requires_observed_phase_begin (test_assassinate_mark.DirectClockTests.test_positive_clock_change_requires_observed_phase_begin) ... ok
+test_shackleshot_cannot_use_mark_evidence (test_assassinate_mark.DirectClockTests.test_shackleshot_cannot_use_mark_evidence) ... ok
+test_ability_serial_change_drops_episode (test_assassinate_mark.MarkReaderTests.test_ability_serial_change_drops_episode) ... ok
+test_all_four_user_cast_edges_reach_counterspell_selection (test_assassinate_mark.MarkReaderTests.test_all_four_user_cast_edges_reach_counterspell_selection) ... ok
+test_cached_mark_age_not_rejuvenated_in_threat (test_assassinate_mark.MarkReaderTests.test_cached_mark_age_not_rejuvenated_in_threat) ... ok
+test_cancellation_or_no_cooldown_has_no_threat (test_assassinate_mark.MarkReaderTests.test_cancellation_or_no_cooldown_has_no_threat) ... ok
+test_caster_serial_change_drops_episode (test_assassinate_mark.MarkReaderTests.test_caster_serial_change_drops_episode) ... ok
+test_changed_game_clock_after_launch_clears_flight (test_assassinate_mark.MarkReaderTests.test_changed_game_clock_after_launch_clears_flight) ... ok
+test_delayed_cooldown_within_grace (test_assassinate_mark.MarkReaderTests.test_delayed_cooldown_within_grace) ... ok
+test_gap_clears_flight_no_reconstruction (test_assassinate_mark.MarkReaderTests.test_gap_clears_flight_no_reconstruction) ... ok
+test_hidden_source_clears_mark_episode (test_assassinate_mark.MarkReaderTests.test_hidden_source_clears_mark_episode) ... ok
+test_invalid_build_does_not_read_mark_or_send (test_assassinate_mark.MarkReaderTests.test_invalid_build_does_not_read_mark_or_send) ... ok
+test_invalid_handle_real_positive_end_clock_creates_mark_threat (test_assassinate_mark.MarkReaderTests.test_invalid_handle_real_positive_end_clock_creates_mark_threat) ... ok
+test_invalid_instance_pointer_rejected (test_assassinate_mark.MarkReaderTests.test_invalid_instance_pointer_rejected) ... ok
+test_known_other_target_not_overridden_by_local_mark (test_assassinate_mark.MarkReaderTests.test_known_other_target_not_overridden_by_local_mark) ... ok
+test_local_identity_backlink_required (test_assassinate_mark.MarkReaderTests.test_local_identity_backlink_required) ... ok
+test_local_teleport_clears_mark_episode (test_assassinate_mark.MarkReaderTests.test_local_teleport_clears_mark_episode) ... ok
+test_mark_can_arrive_after_phase_within_bound (test_assassinate_mark.MarkReaderTests.test_mark_can_arrive_after_phase_within_bound) ... ok
+test_mark_can_arrive_one_poll_before_phase (test_assassinate_mark.MarkReaderTests.test_mark_can_arrive_one_poll_before_phase) ... ok
+test_mark_seen_mid_phase_without_baseline_is_not_a_launch (test_assassinate_mark.MarkReaderTests.test_mark_seen_mid_phase_without_baseline_is_not_a_launch) ... ok
+test_mark_too_far_before_phase_is_not_reassigned (test_assassinate_mark.MarkReaderTests.test_mark_too_far_before_phase_is_not_reassigned) ... ok
+test_marker_disappearance_clears_active_flight (test_assassinate_mark.MarkReaderTests.test_marker_disappearance_clears_active_flight) ... ok
+test_marker_replacement_cancels_episode (test_assassinate_mark.MarkReaderTests.test_marker_replacement_cancels_episode) ... ok
+test_phase_cd_without_local_mark_still_never_authorize (test_assassinate_mark.MarkReaderTests.test_phase_cd_without_local_mark_still_never_authorize) ... ok
+test_phase_start_change_cancels_episode (test_assassinate_mark.MarkReaderTests.test_phase_start_change_cancels_episode) ... ok
+test_positive_cached_mark_keeps_original_timestamp (test_assassinate_mark.MarkReaderTests.test_positive_cached_mark_keeps_original_timestamp) ... ok
+test_same_index_wrong_serial_not_overridden (test_assassinate_mark.MarkReaderTests.test_same_index_wrong_serial_not_overridden) ... ok
+test_second_possible_sniper_blocks_correlation (test_assassinate_mark.MarkReaderTests.test_second_possible_sniper_blocks_correlation) ... ok
+test_stale_mark_present_before_cast_is_not_rebound_to_caster (test_assassinate_mark.MarkReaderTests.test_stale_mark_present_before_cast_is_not_rebound_to_caster) ... ok
+test_torn_phase_during_mark_scan_skips_frame_then_recovers (test_assassinate_mark.MarkReaderTests.test_torn_phase_during_mark_scan_skips_frame_then_recovers) ... ok
+test_unknown_modifier_scan_clears_active_flight (test_assassinate_mark.MarkReaderTests.test_unknown_modifier_scan_clears_active_flight) ... ok
+test_unreadable_second_caster_blocks_correlation (test_assassinate_mark.MarkReaderTests.test_unreadable_second_caster_blocks_correlation) ... ok
+test_unrelated_forward_timestamp_is_rejected (test_assassinate_mark.MarkReaderTests.test_unrelated_forward_timestamp_is_rejected) ... ok
+test_disabled_counterspell_still_blocks (test_assassinate_mark.MarkServiceTests.test_disabled_counterspell_still_blocks) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: выключен в меню | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_focus_loss_still_disarms (test_assassinate_mark.MarkServiceTests.test_focus_loss_still_disarms) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Dota не в фокусе]
+ok
+test_missing_mana_not_overridden (test_assassinate_mark.MarkServiceTests.test_missing_mana_not_overridden) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: не хватает маны | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_mouse_input_no_longer_blocks_counterspell (test_assassinate_mark.MarkServiceTests.test_mouse_input_no_longer_blocks_counterspell) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_other_ability_key_no_longer_blocks_counterspell (test_assassinate_mark.MarkServiceTests.test_other_ability_key_no_longer_blocks_counterspell) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_pending_ks_command_blocks_second_sender (test_assassinate_mark.MarkServiceTests.test_pending_ks_command_blocks_second_sender) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ожидаем завершения команды Killsteal | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ожидаем завершения команды Killsteal | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_preview_selects_counterspell_without_input (test_assassinate_mark.MarkServiceTests.test_preview_selects_counterspell_without_input) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER PREVIEW ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 PREVIEW OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER PREVIEW ON] hero=npc_dota_hero_antimage | PREVIEW · Counterspell ← Assassinate · БЕЗ ВВОДА | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_proof_expiring_between_plan_and_input_is_rechecked (test_assassinate_mark.MarkServiceTests.test_proof_expiring_between_plan_and_input_is_rechecked) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.238571428571387,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ввод пропущен: not armed | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_reader_to_sender_counterspell_sent_exactly_once (test_assassinate_mark.MarkServiceTests.test_reader_to_sender_counterspell_sent_exactly_once) ... [DODGER OBS #1] {"kind":"cast_fields","at":9.96,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":0.0,"start":50.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"local_mark","at":9.96,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":false,"instance":"0x0"}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":100.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"local_mark","at":10.0,"local":"0x20000","modifier":"CDOTA_Modifier_Sniper_Assassinate","use_for_input":true,"present":true,"instance":"0x90000"}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Assassinate: метка на вас · наблюдаем каст | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 0, предзащит 0; оценка, не projectile manager · Assassinate: метка на вас · наблюдаем каст | trace=["sniper_assassinate: phase=1 cd=0.000 start=100.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка на вас · наблюдаем каст; path=local_mark"]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER OBS #5] {"kind":"cast_fields","at":12.0,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":10.0,"start":102.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #6] {"kind":"launch","at":12.0,"evidence":"local_mark_launch","local":"0x20000","source":"0x30000","cast_point":null,"guard_point":null,"earliest":12.23857142857143,"latest":13.041891891891892}
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=Sniper / WR: способностей 1, цель — вы 1, запусков 1, предзащит 0; оценка, не projectile manager · Assassinate: метка + конец каста + CD · запуск | trace=["sniper_assassinate: phase=0 cd=10.000 start=102.000 target=0xffffffff (idx=invalid), local_idx=1; invalid_handle","Assassinate: метка + конец каста + CD · запуск; path=local_mark"]
+ok
+test_instances_reuses_validated_owner_vector_not_stack_count (test_assassinate_mark.ModifierTokenTests.test_instances_reuses_validated_owner_vector_not_stack_count) ... ok
+test_global_no_projection_or_hud_restriction (test_camera_probe.CameraTests.test_global_no_projection_or_hud_restriction) ... ok
+test_global_still_checks_fog_freshness_hp_and_inventory (test_camera_probe.CameraTests.test_global_still_checks_fog_freshness_hp_and_inventory) ... ok
+test_global_without_world_coordinates (test_camera_probe.CameraTests.test_global_without_world_coordinates) ... ok
+test_no_target_requires_world_radius_not_projection (test_camera_probe.CameraTests.test_no_target_requires_world_radius_not_projection) ... ok
+test_reader_offscreen_annotation (test_camera_probe.CameraTests.test_reader_offscreen_annotation) ... ok
+test_unit_and_point_still_require_screen (test_camera_probe.CameraTests.test_unit_and_point_still_require_screen) ... ok
+test_camera_motion_does_not_turn_stationary_enemy_into_fog (test_camera_probe.DotVisibilityTests.test_camera_motion_does_not_turn_stationary_enemy_into_fog) ... ok
+test_offscreen_alive_is_combat_visible_not_rendered (test_camera_probe.DotVisibilityTests.test_offscreen_alive_is_combat_visible_not_rendered) ... ok
+test_read_exception_clears_previous_visibility (test_camera_probe.DotVisibilityTests.test_read_exception_clears_previous_visibility) ... ok
+test_real_dormancy_or_unreadable_bit_not_combat_visible (test_camera_probe.DotVisibilityTests.test_real_dormancy_or_unreadable_bit_not_combat_visible) ... ok
+test_strict_dormancy_unknown_fails_closed (test_camera_probe.DotVisibilityTests.test_strict_dormancy_unknown_fails_closed) ... ok
+test_budget_enforced (test_camera_probe.ProbeTests.test_budget_enforced) ... ok
+test_capture_with_fake_dot_and_no_native_input (test_camera_probe.ProbeTests.test_capture_with_fake_dot_and_no_native_input) ... ok
+test_invalid_pe_rejected (test_camera_probe.ProbeTests.test_invalid_pe_rejected) ... ok
+test_live_rtti_not_foreign_rvas (test_camera_probe.ProbeTests.test_live_rtti_not_foreign_rvas) ... ok
+test_manager_neighbourhood_only_candidates (test_camera_probe.ProbeTests.test_manager_neighbourhood_only_candidates) ... ok
+test_rejects_secondary_vptr_and_unreadable (test_camera_probe.ProbeTests.test_rejects_secondary_vptr_and_unreadable) ... ok
+test_rejects_wrong_locator_image (test_camera_probe.ProbeTests.test_rejects_wrong_locator_image) ... ok
+test_save_single_valid_archive (test_camera_probe.ProbeTests.test_save_single_valid_archive) ... ok
+test_stack_correlation_not_automatic_binding (test_camera_probe.ProbeTests.test_stack_correlation_not_automatic_binding) ... ok
+test_stack_needs_three_distinct_counts (test_camera_probe.ProbeTests.test_stack_needs_three_distinct_counts) ... ok
+test_stack_rejects_ambiguous_instances (test_camera_probe.ProbeTests.test_stack_rejects_ambiguous_instances) ... ok
+test_stack_rejects_changed_hero_or_build (test_camera_probe.ProbeTests.test_stack_rejects_changed_hero_or_build) ... ok
+test_actual_native_model_and_wire_dto (test_compact_native.NativeCompactSmoke.test_actual_native_model_and_wire_dto) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_catalogue (test_core.ConfigTests.test_catalogue) ... ok
+test_duplicate_json_keys (test_core.ConfigTests.test_duplicate_json_keys) ... ok
+test_f6_is_not_a_killsteal_toggle_or_reserved_control_key (test_core.ConfigTests.test_f6_is_not_a_killsteal_toggle_or_reserved_control_key) ... ok
+test_invalid_profiles_fail_closed (test_core.ConfigTests.test_invalid_profiles_fail_closed) ... ok
+test_named_keys (test_core.ConfigTests.test_named_keys) ... ok
+test_new_ability_needs_only_json (test_core.ConfigTests.test_new_ability_needs_only_json) ... ok
+test_public_741f_catalogue_is_prefilled_but_disabled (test_core.ConfigTests.test_public_741f_catalogue_is_prefilled_but_disabled) ... ok
+test_unsupported_template_cannot_be_enabled (test_core.ConfigTests.test_unsupported_template_cannot_be_enabled) ... ok
+test_zeus_cloud_is_skipped_with_warning_without_disabling_other_profiles (test_core.ConfigTests.test_zeus_cloud_is_skipped_with_warning_without_disabling_other_profiles) ... ok
+test_action_state (test_core.EngineTests.test_action_state) ... ok
+test_bad_target_values (test_core.EngineTests.test_bad_target_values) ... ok
+test_dagon_variants_current_slot_and_no_charges_requirement (test_core.EngineTests.test_dagon_variants_current_slot_and_no_charges_requirement) ... ok
+test_each_enabled_profile_has_a_synthetic_lethal_case (test_core.EngineTests.test_each_enabled_profile_has_a_synthetic_lethal_case) ... ok
+test_freshness (test_core.EngineTests.test_freshness) ... ok
+test_global_visible_only (test_core.EngineTests.test_global_visible_only) ... ok
+test_hero_binding_protects_stolen_spell (test_core.EngineTests.test_hero_binding_protects_stolen_spell) ... ok
+test_int_scaling (test_core.EngineTests.test_int_scaling) ... ok
+test_inventory_rules (test_core.EngineTests.test_inventory_rules) ... ok
+test_lion_reference (test_core.EngineTests.test_lion_reference) ... ok
+test_local_state (test_core.EngineTests.test_local_state) ... ok
+test_mana_economy_first (test_core.EngineTests.test_mana_economy_first) ... ok
+test_margin_and_regen (test_core.EngineTests.test_margin_and_regen) ... ok
+test_masks (test_core.EngineTests.test_masks) ... ok
+test_no_target_radius (test_core.EngineTests.test_no_target_radius) ... ok
+test_no_target_stationary_gate (test_core.EngineTests.test_no_target_stationary_gate) ... ok
+test_point_waits_for_stationary_target (test_core.EngineTests.test_point_waits_for_stationary_target) ... ok
+test_pure_damage_ignores_mr (test_core.EngineTests.test_pure_damage_ignores_mr) ... ok
+test_quarantine_excludes_only_one_source (test_core.EngineTests.test_quarantine_excludes_only_one_source) ... ok
+test_range_boundary (test_core.EngineTests.test_range_boundary) ... ok
+test_self_damage_gate_prevents_lethal_scream (test_core.EngineTests.test_self_damage_gate_prevents_lethal_scream) ... ok
+test_unknown_talent_uses_lower_bound_and_never_assumes_bonus (test_core.EngineTests.test_unknown_talent_uses_lower_bound_and_never_assumes_bonus) ... ok
+test_charge_feedback (test_core.LedgerTests.test_charge_feedback) ... ok
+test_cooldown_feedback_and_impact_wait (test_core.LedgerTests.test_cooldown_feedback_and_impact_wait) ... ok
+test_manual_cd_observation_releases_quarantine (test_core.LedgerTests.test_manual_cd_observation_releases_quarantine) ... ok
+test_not_ready_while_pending (test_core.LedgerTests.test_not_ready_while_pending) ... ok
+test_other_hero_resets_pending (test_core.LedgerTests.test_other_hero_resets_pending) ... ok
+test_pre_send_frame_does_not_confirm (test_core.LedgerTests.test_pre_send_frame_does_not_confirm) ... ok
+test_unknown_result_quarantined_not_retried (test_core.LedgerTests.test_unknown_result_quarantined_not_retried) ... ok
+test_held_at_startup (test_core.ToggleTests.test_held_at_startup) ... ok
+test_no_refocus_rearm (test_core.ToggleTests.test_no_refocus_rearm) ... ok
+test_rising_edge_not_repeat (test_core.ToggleTests.test_rising_edge_not_repeat) ... ok
+test_unready_press_is_not_delayed_activation (test_core.ToggleTests.test_unready_press_is_not_delayed_activation) ... ok
+test_exception_is_not_a_generic_no_target_bypass (test_counterspell.BackendPolicyTests.test_exception_is_not_a_generic_no_target_bypass) ... ok
+test_focus_armed_and_stale_guards_remain (test_counterspell.BackendPolicyTests.test_focus_armed_and_stale_guards_remain) ... ok
+test_held_e_is_never_released_by_automation (test_counterspell.BackendPolicyTests.test_held_e_is_never_released_by_automation) ... ok
+test_lmb_rmb_are_not_pressed_released_or_moved_by_sender (test_counterspell.BackendPolicyTests.test_lmb_rmb_are_not_pressed_released_or_moved_by_sender) ... ok
+test_modifier_arriving_between_guards_is_blocked (test_counterspell.BackendPolicyTests.test_modifier_arriving_between_guards_is_blocked) ... ok
+test_modifiers_and_hard_stops_remain_blockers (test_counterspell.BackendPolicyTests.test_modifiers_and_hard_stops_remain_blockers) ... ok
+test_mouse_arriving_between_guards_is_allowed (test_counterspell.BackendPolicyTests.test_mouse_arriving_between_guards_is_allowed) ... ok
+test_no_opt_in_keeps_old_mouse_guard (test_counterspell.BackendPolicyTests.test_no_opt_in_keeps_old_mouse_guard) ... ok
+test_other_spell_and_custom_item_keys_block (test_counterspell.BackendPolicyTests.test_other_spell_and_custom_item_keys_block) ... ok
+test_partial_send_is_failure_with_compensating_keyup_only (test_counterspell.BackendPolicyTests.test_partial_send_is_failure_with_compensating_keyup_only) ... ok
+test_wrong_hero_target_key_or_cursor_cannot_opt_in (test_counterspell.BackendPolicyTests.test_wrong_hero_target_key_or_cursor_cannot_opt_in) ... ok
+test_arm_request_can_complete_during_mouse_play (test_counterspell.CounterspellServiceTests.test_arm_request_can_complete_during_mouse_play) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_busy_hero_still_blocks (test_counterspell.CounterspellServiceTests.test_busy_hero_still_blocks) ... [DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · пауза: герой кастует/занят: состояние неизвестно | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_confirmed_attempt_then_recorded_missing_cd_sequence (test_counterspell.CounterspellServiceTests.test_confirmed_attempt_then_recorded_missing_cd_sequence) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER CD подтверждён · Counterspell · активация, не подтверждение отражения]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+[DODGER Готов к новой угрозе · Counterspell · предыдущая попытка НЕ подтверждена]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+ok
+test_disabled_e_cannot_recover_implicitly (test_counterspell.CounterspellServiceTests.test_disabled_e_cannot_recover_implicitly) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+ok
+test_disabled_e_does_not_enable_mouse_exception (test_counterspell.CounterspellServiceTests.test_disabled_e_does_not_enable_mouse_exception) ... [DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: выключен в меню | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_end_to_end_service_real_backend_guard (test_counterspell.CounterspellServiceTests.test_end_to_end_service_real_backend_guard) ... [DODGER SENT · Counterspell ← Assassinate · защитный quickcast; ручные клавиши/мышь не паузят; ожидается CD]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: Dodger / защитное окно]
+ok
+test_explicit_menu_rearm_allows_next_new_threat_after_two_misses (test_counterspell.CounterspellServiceTests.test_explicit_menu_rearm_allows_next_new_threat_after_two_misses) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+[DODGER Готов к новой угрозе · Counterspell · предыдущая попытка НЕ подтверждена]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER Нет CD · Counterspell · Две попытки без CD: проверь выбранного героя/бинд и включи Dodger заново]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Две попытки без CD: проверь выбранного героя/бинд и включи Dodger заново | reader=test | trace=[]
+[DODGER Готов к новой угрозе · Counterspell · предыдущая попытка НЕ подтверждена]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+ok
+test_first_miss_recovers_on_new_threat_and_sends_once (test_counterspell.CounterspellServiceTests.test_first_miss_recovers_on_new_threat_and_sends_once) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+[DODGER Готов к новой угрозе · Counterspell · предыдущая попытка НЕ подтверждена]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+ok
+test_fresh_cooldown_resets_consecutive_failure_budget (test_counterspell.CounterspellServiceTests.test_fresh_cooldown_resets_consecutive_failure_budget) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+ok
+test_mouse_allows_other_defenses_when_e_on_cd (test_counterspell.CounterspellServiceTests.test_mouse_allows_other_defenses_when_e_on_cd) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_mouse_held_allows_e (test_counterspell.CounterspellServiceTests.test_mouse_held_allows_e) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_no_cd_is_visible_and_does_not_repeat_old_threat (test_counterspell.CounterspellServiceTests.test_no_cd_is_visible_and_does_not_repeat_old_threat) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+ok
+test_off_is_not_auto_rearmed_by_mouse_exception (test_counterspell.CounterspellServiceTests.test_off_is_not_auto_rearmed_by_mouse_exception) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_other_keyboard_key_has_no_residual_pause (test_counterspell.CounterspellServiceTests.test_other_keyboard_key_has_no_residual_pause) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_partial_failure_does_not_use_automatic_or_menu_reset_recovery (test_counterspell.CounterspellServiceTests.test_partial_failure_does_not_use_automatic_or_menu_reset_recovery) ... [DODGER FAILED / OFF · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Ошибка ввода Dodger; оба модуля OFF]
+[DODGER Нет CD · Counterspell · Ошибка/частичный ввод: нужен подтверждённый CD; автоповтор запрещён]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Ошибка/частичный ввод: нужен подтверждённый CD; автоповтор запрещён | reader=test | trace=[]
+ok
+test_pending_ks_command_still_blocks (test_counterspell.CounterspellServiceTests.test_pending_ks_command_still_blocks) ... [DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · ожидаем завершения команды Killsteal | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_preview_does_not_spend_next_attempt (test_counterspell.CounterspellServiceTests.test_preview_does_not_spend_next_attempt) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+[DODGER Готов к новой угрозе · Counterspell · предыдущая попытка НЕ подтверждена]
+[KS5 PREVIEW OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_residual_mouse_pause_does_not_delay_e (test_counterspell.CounterspellServiceTests.test_residual_mouse_pause_does_not_delay_e) ... [DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: рано / защита не перекрывает весь интервал | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+ok
+test_stale_cooldown_cannot_lift_quarantine (test_counterspell.CounterspellServiceTests.test_stale_cooldown_cannot_lift_quarantine) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+ok
+test_switching_heroes_does_not_erase_partial_input_quarantine (test_counterspell.CounterspellServiceTests.test_switching_heroes_does_not_erase_partial_input_quarantine) ... [DODGER FAILED / OFF · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Ошибка ввода Dodger; оба модуля OFF]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Сменился локальный герой]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Ошибка/частичный ввод: нужен подтверждённый CD; автоповтор запрещён | reader=test | trace=[]
+ok
+test_two_misses_latch_instead_of_repeated_attempts (test_counterspell.CounterspellServiceTests.test_two_misses_latch_instead_of_repeated_attempts) ... [DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | SENT · Counterspell ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Counterspell · Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Нет ответа CD: ждём стабильную готовность и новую угрозу; старую не повторяем | reader=test | trace=[]
+[DODGER Готов к новой угрозе · Counterspell · предыдущая попытка НЕ подтверждена]
+[DODGER SENT · Counterspell ← Assassinate · fake backend only]
+[DODGER Нет CD · Counterspell · Две попытки без CD: проверь выбранного героя/бинд и включи Dodger заново]
+[DODGER AUTO ON] hero=npc_dota_hero_antimage | ON · Counterspell: Две попытки без CD: проверь выбранного героя/бинд и включи Dodger заново | reader=test | trace=[]
+ok
+test_death_busy_or_other_hero_reset_stability (test_counterspell.RecoveryProofTests.test_death_busy_or_other_hero_reset_stability) ... ok
+test_different_action_identity_starts_fresh_budget (test_counterspell.RecoveryProofTests.test_different_action_identity_starts_fresh_budget) ... ok
+test_gap_stale_and_cached_samples_do_not_establish_half_second (test_counterspell.RecoveryProofTests.test_gap_stale_and_cached_samples_do_not_establish_half_second) ... ok
+test_initial_arm_does_not_pre_authorize_future_failure_reset (test_counterspell.RecoveryProofTests.test_initial_arm_does_not_pre_authorize_future_failure_reset) ... ok
+test_partial_input_never_allows_even_with_reset (test_counterspell.RecoveryProofTests.test_partial_input_never_allows_even_with_reset) ... ok
+test_readiness_loss_resets_stability (test_counterspell.RecoveryProofTests.test_readiness_loss_resets_stability) ... ok
+test_recovery_does_not_precede_old_flight_end (test_counterspell.RecoveryProofTests.test_recovery_does_not_precede_old_flight_end) ... ok
+test_same_id_wrong_target_unknown_evidence_or_stale_proof_rejects (test_counterspell.RecoveryProofTests.test_same_id_wrong_target_unknown_evidence_or_stale_proof_rejects) ... ok
+test_used_new_threat_is_not_eligible (test_counterspell.RecoveryProofTests.test_used_new_threat_is_not_eligible) ... ok
+test_valid_ready_new_proof_allows (test_counterspell.RecoveryProofTests.test_valid_ready_new_proof_allows) ... ok
+test_ambiguous_local_not_guessed (test_dashboard.DashboardTests.test_ambiguous_local_not_guessed) ... ok
+test_bad_controls_not_partly_applied (test_dashboard.DashboardTests.test_bad_controls_not_partly_applied) ... ok
+test_catalog_contains_only_enabled_hero_profiles_and_is_available_without_local_hero (test_dashboard.DashboardTests.test_catalog_contains_only_enabled_hero_profiles_and_is_available_without_local_hero) ... ok
+test_controls_disarm_but_do_not_clear_ledger (test_dashboard.DashboardTests.test_controls_disarm_but_do_not_clear_ledger) ... ok
+test_cooldown_mana_and_quarantine_reasons (test_dashboard.DashboardTests.test_cooldown_mana_and_quarantine_reasons) ... ok
+test_damage_uses_same_function_as_selector (test_dashboard.DashboardTests.test_damage_uses_same_function_as_selector) ... ok
+test_enable_profile_does_not_arm (test_dashboard.DashboardTests.test_enable_profile_does_not_arm) ... ok
+test_equipped_dagon_binding_and_level (test_dashboard.DashboardTests.test_equipped_dagon_binding_and_level) ... ok
+test_finger_talent_unknown_uses_lower_bound_and_remains_available (test_dashboard.DashboardTests.test_finger_talent_unknown_uses_lower_bound_and_remains_available) ... ok
+test_hero_and_only_real_sources (test_dashboard.DashboardTests.test_hero_and_only_real_sources) ... ok
+test_hero_switch_replaces_lion_not_cached (test_dashboard.DashboardTests.test_hero_switch_replaces_lion_not_cached) ... ok
+test_menu_button_arm_is_deferred_until_close (test_dashboard.DashboardTests.test_menu_button_arm_is_deferred_until_close) ... ok
+test_menu_pause_command_and_invalid_flag (test_dashboard.DashboardTests.test_menu_pause_command_and_invalid_flag) ... ok
+test_rapier_never_listed_as_supported_damage_source (test_dashboard.DashboardTests.test_rapier_never_listed_as_supported_damage_source) ... ok
+test_replay_revision_rejected (test_dashboard.DashboardTests.test_replay_revision_rejected) ... ok
+test_six_empty_slots_only_when_inventory_known (test_dashboard.DashboardTests.test_six_empty_slots_only_when_inventory_known) ... ok
+test_stale_data_not_ready (test_dashboard.DashboardTests.test_stale_data_not_ready) ... ok
+test_talent_unknown_reason_is_exposed_separately (test_dashboard.DashboardTests.test_talent_unknown_reason_is_exposed_separately) ... ok
+test_unknown_source_surfaces_reader_warning (test_dashboard.DashboardTests.test_unknown_source_surfaces_reader_warning) ... ok
+test_upgraded_dagon_alias_uses_read_item_level (test_dashboard.DashboardTests.test_upgraded_dagon_alias_uses_read_item_level) ... ok
+test_wire_single_line_bounded_json (test_dashboard.DashboardTests.test_wire_single_line_bounded_json) ... ok
+test_bounded_ordered_immutable_history (test_dodge_diagnostics.JournalTests.test_bounded_ordered_immutable_history) ... ok
+test_removed_sources_are_not_kept_as_active_state (test_dodge_diagnostics.JournalTests.test_removed_sources_are_not_kept_as_active_state) ... ok
+test_foreign_owner_is_rejected (test_dodge_diagnostics.ModifierPresenceTests.test_foreign_owner_is_rejected) ... ok
+test_unknown_rtti_is_unknown_not_absence (test_dodge_diagnostics.ModifierPresenceTests.test_unknown_rtti_is_unknown_not_absence) ... ok
+test_zero_stack_modifier_is_present_not_absent (test_dodge_diagnostics.ModifierPresenceTests.test_zero_stack_modifier_is_present_not_absent) ... ok
+test_bad_cast_fields_block_even_with_local_handle (test_dodge_diagnostics.ReaderDiagnosticsTests.test_bad_cast_fields_block_even_with_local_handle) ... ok
+test_countdown_does_not_flood_journal (test_dodge_diagnostics.ReaderDiagnosticsTests.test_countdown_does_not_flood_journal) ... ok
+test_gap_is_visible_but_does_not_invent_missing_phase (test_dodge_diagnostics.ReaderDiagnosticsTests.test_gap_is_visible_but_does_not_invent_missing_phase) ... ok
+test_idle_modifier_poll_is_throttled_and_unchanged_result_deduplicated (test_dodge_diagnostics.ReaderDiagnosticsTests.test_idle_modifier_poll_is_throttled_and_unchanged_result_deduplicated) ... ok
+test_invalid_handle_does_not_hide_phase_cd_start (test_dodge_diagnostics.ReaderDiagnosticsTests.test_invalid_handle_does_not_hide_phase_cd_start) ... ok
+test_modifier_error_does_not_disable_existing_detector (test_dodge_diagnostics.ReaderDiagnosticsTests.test_modifier_error_does_not_disable_existing_detector) ... ok
+test_modifier_poll_does_not_depend_on_replicated_phase (test_dodge_diagnostics.ReaderDiagnosticsTests.test_modifier_poll_does_not_depend_on_replicated_phase) ... ok
+test_modifier_presence_is_not_permission_for_input (test_dodge_diagnostics.ReaderDiagnosticsTests.test_modifier_presence_is_not_permission_for_input) ... ok
+test_modifier_probe_is_bounded_per_phase (test_dodge_diagnostics.ReaderDiagnosticsTests.test_modifier_probe_is_bounded_per_phase) ... ok
+test_no_modifier_probe_when_target_already_verified (test_dodge_diagnostics.ReaderDiagnosticsTests.test_no_modifier_probe_when_target_already_verified) ... ok
+test_nonfinite_start_cd_fail_closed (test_dodge_diagnostics.ReaderDiagnosticsTests.test_nonfinite_start_cd_fail_closed) ... ok
+test_other_target_still_has_cast_diagnostics (test_dodge_diagnostics.ReaderDiagnosticsTests.test_other_target_still_has_cast_diagnostics) ... ok
+test_serial_mismatch_not_reported_as_local_target (test_dodge_diagnostics.ReaderDiagnosticsTests.test_serial_mismatch_not_reported_as_local_target) ... ok
+test_short_observed_phase_survives_until_later_sender_poll (test_dodge_diagnostics.ReaderDiagnosticsTests.test_short_observed_phase_survives_until_later_sender_poll) ... ok
+test_unknown_release_cannot_borrow_a_previously_valid_target (test_dodge_diagnostics.ReaderDiagnosticsTests.test_unknown_release_cannot_borrow_a_previously_valid_target) ... ok
+test_unknown_target_never_becomes_a_threat_on_release (test_dodge_diagnostics.ReaderDiagnosticsTests.test_unknown_target_never_becomes_a_threat_on_release) ... ok
+test_zero_handle_has_no_real_index (test_dodge_diagnostics.ReaderDiagnosticsTests.test_zero_handle_has_no_real_index) ... ok
+test_compact_reason_exposes_unknown_target_while_armed (test_dodge_diagnostics.ServiceDiagnosticsTests.test_compact_reason_exposes_unknown_target_while_armed) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_hero_change_clears_last_action (test_dodge_diagnostics.ServiceDiagnosticsTests.test_hero_change_clears_last_action) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Manta Style ← Assassinate · fake backend only]
+ok
+test_manual_pause_takes_priority_over_target_reason (test_dodge_diagnostics.ServiceDiagnosticsTests.test_manual_pause_takes_priority_over_target_reason) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_overflow_is_reported_not_silently_hidden (test_dodge_diagnostics.ServiceDiagnosticsTests.test_overflow_is_reported_not_silently_hidden) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #9] phase=1
+[DODGER AUTO ON] hero=npc_dota_hero_lion | OFF · Включи Dodger на его странице | reader=test | trace=[]
+ok
+test_preview_history_explicitly_has_no_input (test_dodge_diagnostics.ServiceDiagnosticsTests.test_preview_history_explicitly_has_no_input) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_raw_invalid_target_through_armed_counterspell_service_never_sends (test_dodge_diagnostics.ServiceDiagnosticsTests.test_raw_invalid_target_through_armed_counterspell_service_never_sends) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #1] {"kind":"cast_fields","at":10.2,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":1,"cast_point":null,"cd":0.0,"start":9.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #2] {"kind":"modifier_diagnostic","at":10.2,"local":"0x20000","source":"0x30000","phase":true,"use_for_input":false,"present":{}}
+[DODGER OBS #3] {"kind":"cast_fields","at":10.28,"local":"0x20000","source":"0x30000","ability":"0x40000","ability_handle":"0x28002","name":"sniper_assassinate","phase":0,"cast_point":null,"cd":20.0,"start":9.0,"target_raw":"0xffffffff","target_index":null,"local_index":1,"target_state":"invalid_handle"}
+[DODGER OBS #4] {"kind":"modifier_diagnostic","at":10.28,"local":"0x20000","source":"0x30000","phase":false,"use_for_input":false,"present":{}}
+ok
+test_sent_history_has_age_and_does_not_claim_successful_dodge (test_dodge_diagnostics.ServiceDiagnosticsTests.test_sent_history_has_age_and_does_not_claim_successful_dodge) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER SENT · Manta Style ← Assassinate · fake backend only]
+ok
+test_transition_logs_bypass_heartbeat_but_do_not_repeat (test_dodge_diagnostics.ServiceDiagnosticsTests.test_transition_logs_bypass_heartbeat_but_do_not_repeat) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER OBS #1] phase=1
+[DODGER OBS #2] phase=0 cd=20
+ok
+test_native_pages_are_separate (test_dodger.DodgePageContracts.test_native_pages_are_separate) ... ok
+test_native_shared_tiles_use_dodger_flags (test_dodger.DodgePageContracts.test_native_shared_tiles_use_dodger_flags) ... ok
+test_cd_confirmation_not_a_confirmed_dodge (test_dodger.DodgeServiceTests.test_cd_confirmation_not_a_confirmed_dodge) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER CD подтверждён · Manta Style · активация, не подтверждение отражения]
+ok
+test_cli_preview_reason_distinguished_from_config (test_dodger.DodgeServiceTests.test_cli_preview_reason_distinguished_from_config) ... [DODGER PREVIEW OFF] Выключен
+[KS5 PREVIEW OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_console_has_independent_dodger_state (test_dodger.DodgeServiceTests.test_console_has_independent_dodger_state) ... ok
+test_dashboard_has_live_module (test_dodger.DodgeServiceTests.test_dashboard_has_live_module) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_deferred_menu_arm (test_dodger.DodgeServiceTests.test_deferred_menu_arm) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Настройки меню изменены. Вернись в игру; включение из меню будет ждать проверки фокуса и свежих данных.]
+ok
+test_dodge_wins_over_ks_same_tick (test_dodger.DodgeServiceTests.test_dodge_wins_over_ks_same_tick) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO ON | ПАУЗА: Dodger / защитное окно]
+ok
+test_failed_input_reserved_and_off (test_dodger.DodgeServiceTests.test_failed_input_reserved_and_off) ... [DODGER FAILED / OFF · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Ошибка ввода Dodger; оба модуля OFF]
+ok
+test_focus_loss_stops (test_dodger.DodgeServiceTests.test_focus_loss_stops) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Dota не в фокусе]
+ok
+test_hero_change_cancels_pending_request (test_dodger.DodgeServiceTests.test_hero_change_cancels_pending_request) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_invalid_control_all_or_nothing (test_dodger.DodgeServiceTests.test_invalid_control_all_or_nothing) ... ok
+test_ks_pending_blocks_second_command (test_dodger.DodgeServiceTests.test_ks_pending_blocks_second_command) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · ожидаем завершения команды Killsteal | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_manual_mouse_no_longer_pauses_defense (test_dodger.DodgeServiceTests.test_manual_mouse_no_longer_pauses_defense) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_menu_stops (test_dodger.DodgeServiceTests.test_menu_stops) ... [DODGER AUTO ON] hero=npc_dota_hero_lion | ON · меню / ожидание фокуса; без ввода | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_missing_owned_item_is_not_read_error (test_dodger.DodgeServiceTests.test_missing_owned_item_is_not_read_error) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_no_cd_quarantine_survives_menu (test_dodger.DodgeServiceTests.test_no_cd_quarantine_survives_menu) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[DODGER Нет CD · Manta Style · Повторы заблокированы до наблюдения CD]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | ON · Угроза уже обработана, устарела или окно реакции прошло | reader=test | trace=[]
+ok
+test_no_repeat_while_cd_pending (test_dodger.DodgeServiceTests.test_no_repeat_while_cd_pending) ... [DODGER SENT · Manta Style ← Assassinate · fake backend only]
+[DODGER AUTO ON] hero=npc_dota_hero_lion | SENT · Manta Style ← Assassinate | reader=test | trace=[]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_off_default (test_dodger.DodgeServiceTests.test_off_default) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_preview_mode_is_explicit_even_when_off (test_dodger.DodgeServiceTests.test_preview_mode_is_explicit_even_when_off) ... [DODGER PREVIEW OFF] Выключен
+[KS5 PREVIEW OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_preview_never_input (test_dodger.DodgeServiceTests.test_preview_never_input) ... [DODGER PREVIEW ON] hero=npc_dota_hero_lion | PREVIEW · Manta Style ← Assassinate · БЕЗ ВВОДА | reader=test | trace=[]
+[KS5 PREVIEW OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_profile_change_does_not_arm_other_module (test_dodger.DodgeServiceTests.test_profile_change_does_not_arm_other_module) ... ok
+test_source_mana_and_readiness_are_not_fabricated (test_dodger.DodgeServiceTests.test_source_mana_and_readiness_are_not_fabricated) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_busy_dead_stale_local_rejected (test_dodger.PlannerTests.test_busy_dead_stale_local_rejected) ... ok
+test_carapace_never_for_zero_damage_shackle (test_dodger.PlannerTests.test_carapace_never_for_zero_damage_shackle) ... ok
+test_counterspell_blockable_only (test_dodger.PlannerTests.test_counterspell_blockable_only) ... ok
+test_disabled (test_dodger.PlannerTests.test_disabled) ... ok
+test_doppelganger_requires_safe_screen_point (test_dodger.PlannerTests.test_doppelganger_requires_safe_screen_point) ... ok
+test_duplicate_threat (test_dodger.PlannerTests.test_duplicate_threat) ... ok
+test_infest_no_arbitrary_enemy_host (test_dodger.PlannerTests.test_infest_no_arbitrary_enemy_host) ... ok
+test_inventory_unknown (test_dodger.PlannerTests.test_inventory_unknown) ... ok
+test_lotus_not_preferred_over_true_dodge (test_dodger.PlannerTests.test_lotus_not_preferred_over_true_dodge) ... ok
+test_manta_global_camera_independent (test_dodger.PlannerTests.test_manta_global_camera_independent) ... ok
+test_manta_uses_owned_active_slot (test_dodger.PlannerTests.test_manta_uses_owned_active_slot) ... ok
+test_non_disjointable (test_dodger.PlannerTests.test_non_disjointable) ... ok
+test_phase_shift_holds_full_channel (test_dodger.PlannerTests.test_phase_shift_holds_full_channel) ... ok
+test_quarantine (test_dodger.PlannerTests.test_quarantine) ... ok
+test_sleight_rejects_window_wider_than_protection (test_dodger.PlannerTests.test_sleight_rejects_window_wider_than_protection) ... ok
+test_snowball_enemy_target_required (test_dodger.PlannerTests.test_snowball_enemy_target_required) ... ok
+test_stale_wrong_target_unknown_evidence_rejected (test_dodger.PlannerTests.test_stale_wrong_target_unknown_evidence_rejected) ... ok
+test_too_late (test_dodger.PlannerTests.test_too_late) ... ok
+test_unready_action_rejected (test_dodger.PlannerTests.test_unready_action_rejected) ... ok
+test_unverified_transformations_stay_blocked_even_enabled (test_dodger.PlannerTests.test_unverified_transformations_stay_blocked_even_enabled) ... ok
+test_failed_read_clears_estimates (test_dodger.ReaderTests.test_failed_read_clears_estimates) ... ok
+test_mismatched_build_blocked (test_dodger.ReaderTests.test_mismatched_build_blocked) ... ok
+test_reader_accepts_reset_cast_start_at_release (test_dodger.ReaderTests.test_reader_accepts_reset_cast_start_at_release) ... ok
+test_reader_reports_serial_mismatch (test_dodger.ReaderTests.test_reader_reports_serial_mismatch) ... ok
+test_reader_reports_wrong_target_not_silent (test_dodger.ReaderTests.test_reader_reports_wrong_target_not_silent) ... ok
+test_real_schema_addresses_to_launch (test_dodger.ReaderTests.test_real_schema_addresses_to_launch) ... ok
+test_wrong_designer_name_blocked (test_dodger.ReaderTests.test_wrong_designer_name_blocked) ... ok
+test_wrong_serial_same_index_blocked (test_dodger.ReaderTests.test_wrong_serial_same_index_blocked) ... ok
+test_cancel_and_new_cast_not_confused (test_dodger.TrackerTests.test_cancel_and_new_cast_not_confused) ... ok
+test_cancel_no_cd_no_threat (test_dodger.TrackerTests.test_cancel_no_cd_no_threat) ... ok
+test_cast_generation_changed (test_dodger.TrackerTests.test_cast_generation_changed) ... ok
+test_cooldown_one_sample_after_phase_end (test_dodger.TrackerTests.test_cooldown_one_sample_after_phase_end) ... ok
+test_delayed_cd_after_grace_is_not_a_launch (test_dodger.TrackerTests.test_delayed_cd_after_grace_is_not_a_launch) ... ok
+test_first_seen_midflight_not_guessed (test_dodger.TrackerTests.test_first_seen_midflight_not_guessed) ... ok
+test_gap_rejects_launch (test_dodger.TrackerTests.test_gap_rejects_launch) ... ok
+test_launch_requires_target_phase_and_cd (test_dodger.TrackerTests.test_launch_requires_target_phase_and_cd) ... ok
+test_lost_observation_invalidates (test_dodger.TrackerTests.test_lost_observation_invalidates) ... ok
+test_no_cooldown_mode_cannot_be_treated_as_confirmed (test_dodger.TrackerTests.test_no_cooldown_mode_cannot_be_treated_as_confirmed) ... ok
+test_one_launch_no_repeated_event (test_dodger.TrackerTests.test_one_launch_no_repeated_event) ... ok
+test_serial_change_at_release_rejected (test_dodger.TrackerTests.test_serial_change_at_release_rejected) ... ok
+test_single_phase_sample_not_enough (test_dodger.TrackerTests.test_single_phase_sample_not_enough) ... ok
+test_start_time_reset_after_cast (test_dodger.TrackerTests.test_start_time_reset_after_cast) ... ok
+test_target_changed (test_dodger.TrackerTests.test_target_changed) ... ok
+test_teleport_invalidates (test_dodger.TrackerTests.test_teleport_invalidates) ... ok
+test_assigned_hero_above_highest_index_is_still_force_fetched (test_entity_iteration.EntityIterationTests.test_assigned_hero_above_highest_index_is_still_force_fetched) ... ok
+test_feed_scan_reads_only_chunks_through_highest_index (test_entity_iteration.EntityIterationTests.test_feed_scan_reads_only_chunks_through_highest_index) ... ok
+test_full_scan_mode_retains_all_64_chunks (test_entity_iteration.EntityIterationTests.test_full_scan_mode_retains_all_64_chunks) ... ok
+test_player_resource_scan_can_force_fetch_without_mutating_iterator (test_entity_iteration.EntityIterationTests.test_player_resource_scan_can_force_fetch_without_mutating_iterator) ... ok
+test_budget_limit_not_silently_empty_success (test_event_probe.EventTests.test_budget_limit_not_silently_empty_success) ... ok
+test_opaque_fields_not_decoded_as_target (test_event_probe.EventTests.test_opaque_fields_not_decoded_as_target) ... ok
+test_particle_output_bounded (test_event_probe.EventTests.test_particle_output_bounded) ... ok
+test_positions_finite_bounded_not_guessed (test_event_probe.EventTests.test_positions_finite_bounded_not_guessed) ... ok
+test_read_failure_recorded_without_false_complete (test_event_probe.EventTests.test_read_failure_recorded_without_false_complete) ... ok
+test_sampling_explicit_no_live_hidden_hero_claim (test_event_probe.EventTests.test_sampling_explicit_no_live_hidden_hero_claim) ... ok
+test_empty_roster_full_scan_is_retried_at_bounded_rate (test_feed_stability.FeedStabilityTests.test_empty_roster_full_scan_is_retried_at_bounded_rate) ... ok
+test_first_full_scan_is_immediate (test_feed_stability.FeedStabilityTests.test_first_full_scan_is_immediate) ... ok
+test_populated_roster_keeps_regular_refresh_interval (test_feed_stability.FeedStabilityTests.test_populated_roster_keeps_regular_refresh_interval) ... ok
+test_quick_edit_is_removed_without_clobbering_other_console_flags (test_feed_stability.FeedStabilityTests.test_quick_edit_is_removed_without_clobbering_other_console_flags) ... ok
+test_slow_snapshot_does_not_block_reader_and_only_one_request_runs (test_feed_stability.FeedStabilityTests.test_slow_snapshot_does_not_block_reader_and_only_one_request_runs) ... ok
+test_snapshot_exception_is_returned_and_worker_can_retry (test_feed_stability.FeedStabilityTests.test_snapshot_exception_is_returned_and_worker_can_retry) ... ok
+test_fogged_or_hidden_opponents_never_reach_overlay (test_feed_visibility.FeedVisibilityTests.test_fogged_or_hidden_opponents_never_reach_overlay) ... ok
+test_illusions_are_never_added_to_overlay_roster (test_feed_visibility.FeedVisibilityTests.test_illusions_are_never_added_to_overlay_roster) ... ok
+test_visible_opponents_and_offscreen_local_hero_are_allowed (test_feed_visibility.FeedVisibilityTests.test_visible_opponents_and_offscreen_local_hero_are_allowed) ... ok
+test_changing_unlogged_tail_is_rejected (test_inline_regressions.Fix3InventoryTests.test_changing_unlogged_tail_is_rejected) ... ok
+test_count_beyond_schema_capacity_is_rejected (test_inline_regressions.Fix3InventoryTests.test_count_beyond_schema_capacity_is_rejected) ... ok
+test_empty_inline_target_passes_inventory_gate (test_inline_regressions.Fix3InventoryTests.test_empty_inline_target_passes_inventory_gate) ... ok
+test_exact_interruption_name (test_inline_regressions.Fix3InventoryTests.test_exact_interruption_name) ... ok
+test_full_empty_inline_inventory (test_inline_regressions.Fix3InventoryTests.test_full_empty_inline_inventory) ... ok
+test_invalid_field_extent_rejected (test_inline_regressions.Fix3InventoryTests.test_invalid_field_extent_rejected) ... ok
+test_lion_inline_slots_not_shifted (test_inline_regressions.Fix3InventoryTests.test_lion_inline_slots_not_shifted) ... ok
+test_logged_prefix_alone_cannot_prove_empty_inventory (test_inline_regressions.Fix3InventoryTests.test_logged_prefix_alone_cannot_prove_empty_inventory) ... ok
+test_nonempty_slot_after_logged_prefix_is_checked (test_inline_regressions.Fix3InventoryTests.test_nonempty_slot_after_logged_prefix_is_checked) ... ok
+test_schema_extent_is_104_bytes (test_inline_regressions.Fix3InventoryTests.test_schema_extent_is_104_bytes) ... ok
+test_stash_unknown_does_not_invalidate_combat_slots (test_inline_regressions.Fix3InventoryTests.test_stash_unknown_does_not_invalidate_combat_slots) ... ok
+test_unknown_item_not_silently_empty (test_inline_regressions.Fix3InventoryTests.test_unknown_item_not_silently_empty) ... ok
+test_active_slot_unresolved_is_unknown_not_empty (test_inventory.InventoryTests.test_active_slot_unresolved_is_unknown_not_empty) ... ok
+test_ambiguous_layouts_rejected (test_inventory.InventoryTests.test_ambiguous_layouts_rejected) ... ok
+test_empty_allocated_vector (test_inventory.InventoryTests.test_empty_allocated_vector) ... ok
+test_neutral_slot_is_checked (test_inventory.InventoryTests.test_neutral_slot_is_checked) ... ok
+test_other_layout_preserves_slot (test_inventory.InventoryTests.test_other_layout_preserves_slot) ... ok
+test_reader_exception_becomes_unknown (test_inventory.InventoryTests.test_reader_exception_becomes_unknown) ... ok
+test_stash_unresolved_is_irrelevant (test_inventory.InventoryTests.test_stash_unresolved_is_irrelevant) ... ok
+test_unreadable_header_not_empty (test_inventory.InventoryTests.test_unreadable_header_not_empty) ... ok
+test_unreadable_vector_not_empty (test_inventory.InventoryTests.test_unreadable_vector_not_empty) ... ok
+test_zero_length_vector_with_metadata (test_inventory.InventoryTests.test_zero_length_vector_with_metadata) ... ok
+test_busy_hero_still_cannot_be_interrupted_by_ks (test_ks_input_fix.KSPriorityTests.test_busy_hero_still_cannot_be_interrupted_by_ks) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO ON | Герой занят: ?]
+ok
+test_cursor_move_before_final_send_still_refuses (test_ks_input_fix.KSPriorityTests.test_cursor_move_before_final_send_still_refuses) ... ok
+test_each_modifier_and_all_modifiers_are_restored (test_ks_input_fix.KSPriorityTests.test_each_modifier_and_all_modifiers_are_restored) ... ok
+test_enter_after_aim_skips_and_can_resume_after_release (test_ks_input_fix.KSPriorityTests.test_enter_after_aim_skips_and_can_resume_after_release) ... ok
+test_modifier_release_during_cast_is_not_repressed (test_ks_input_fix.KSPriorityTests.test_modifier_release_during_cast_is_not_repressed) ... ok
+test_mouse_and_other_letters_allow_one_real_ks_key_pair (test_ks_input_fix.KSPriorityTests.test_mouse_and_other_letters_allow_one_real_ks_key_pair) ... ok
+test_no_physical_modifier_tracking_skips_without_mutating_keys (test_ks_input_fix.KSPriorityTests.test_no_physical_modifier_tracking_skips_without_mutating_keys) ... ok
+test_own_key_and_guard_keys_never_emit (test_ks_input_fix.KSPriorityTests.test_own_key_and_guard_keys_never_emit) ... ok
+test_partial_pair_releases_cast_key_and_restores_alt (test_ks_input_fix.KSPriorityTests.test_partial_pair_releases_cast_key_and_restores_alt) ... ok
+test_service_to_actual_sender_with_mouse_alt_and_other_spell (test_ks_input_fix.KSPriorityTests.test_service_to_actual_sender_with_mouse_alt_and_other_spell) ... [DODGER AUTO OFF] Выключен
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | KS quickcast; ручные клавиши/мышь не паузят; ожидается CD]
+ok
+test_native_build_has_no_camera_dependency (test_ks_input_fix.NoCameraTests.test_native_build_has_no_camera_dependency) ... ok
+test_disabled_events_are_not_printed_or_replayed_on_enable (test_ks_input_fix.QuietDodgerTests.test_disabled_events_are_not_printed_or_replayed_on_enable) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_off_prints_once_despite_changing_status_and_heartbeats (test_ks_input_fix.QuietDodgerTests.test_off_prints_once_despite_changing_status_and_heartbeats) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_pending_feedback_is_not_muted_when_disabled (test_ks_input_fix.QuietDodgerTests.test_pending_feedback_is_not_muted_when_disabled) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_bad_kv_refused (test_last_hit.AssetsTests.test_bad_kv_refused) ... ok
+test_local_hero_defaults_and_missing_data (test_last_hit.AssetsTests.test_local_hero_defaults_and_missing_data) ... ok
+test_nested_kv (test_last_hit.AssetsTests.test_nested_kv) ... ok
+test_vpk_corruption_missing_and_oversize_are_not_accepted (test_last_hit.AssetsTests.test_vpk_corruption_missing_and_oversize_are_not_accepted) ... ok
+test_vpk_embedded_v1_v2_and_external_preload (test_last_hit.AssetsTests.test_vpk_embedded_v1_v2_and_external_preload) ... ok
+test_alt_is_temporarily_neutralized_and_restored (test_last_hit.InputTests.test_alt_is_temporarily_neutralized_and_restored) ... ok
+test_cursor_change_during_last_guard_never_clicks (test_last_hit.InputTests.test_cursor_change_during_last_guard_never_clicks) ... ok
+test_exception_during_packet_releases_key_and_lmb (test_last_hit.InputTests.test_exception_during_packet_releases_key_and_lmb) ... ok
+test_focus_change_after_aim_blocks (test_last_hit.InputTests.test_focus_change_after_aim_blocks) ... ok
+test_menu_end_chat_own_attack_key_and_held_lmb_block (test_last_hit.InputTests.test_menu_end_chat_own_attack_key_and_held_lmb_block) ... ok
+test_mouse4_is_held_and_one_attack_click_emitted (test_last_hit.InputTests.test_mouse4_is_held_and_one_attack_click_emitted) ... ok
+test_partial_key_down_is_released_without_click (test_last_hit.InputTests.test_partial_key_down_is_released_without_click) ... ok
+test_partial_mouse_down_is_released (test_last_hit.InputTests.test_partial_mouse_down_is_released) ... ok
+test_physical_alt_release_is_not_repressed (test_last_hit.InputTests.test_physical_alt_release_is_not_repressed) ... ok
+test_release_before_call_sends_nothing (test_last_hit.InputTests.test_release_before_call_sends_nothing) ... ok
+test_release_during_aim_sends_nothing (test_last_hit.InputTests.test_release_during_aim_sends_nothing) ... ok
+test_ambiguous_target_change_does_not_attribute_new_shot (test_last_hit.ModelTests.test_ambiguous_target_change_does_not_attribute_new_shot) ... ok
+test_armor_reduces_damage (test_last_hit.ModelTests.test_armor_reduces_damage) ... ok
+test_attack_cooldown (test_last_hit.ModelTests.test_attack_cooldown) ... ok
+test_basic_enemy_last_hit (test_last_hit.ModelTests.test_basic_enemy_last_hit) ... ok
+test_deny_enabled_and_threshold (test_last_hit.ModelTests.test_deny_enabled_and_threshold) ... ok
+test_enemy_has_priority_over_deny (test_last_hit.ModelTests.test_enemy_has_priority_over_deny) ... ok
+test_first_seen_tower_does_not_invent_a_shot (test_last_hit.ModelTests.test_first_seen_tower_does_not_invent_a_shot) ... ok
+test_flying_shot_survives_later_tower_target_switch (test_last_hit.ModelTests.test_flying_shot_survives_later_tower_target_switch) ... ok
+test_forecast_rejects_dead_before_impact (test_last_hit.ModelTests.test_forecast_rejects_dead_before_impact) ... ok
+test_hero_change_and_time_reset_drop_history (test_last_hit.ModelTests.test_hero_change_and_time_reset_drop_history) ... ok
+test_incomplete_or_error_frame_blocks (test_last_hit.ModelTests.test_incomplete_or_error_frame_blocks) ... ok
+test_min_damage_not_random_maximum (test_last_hit.ModelTests.test_min_damage_not_random_maximum) ... ok
+test_never_chases_or_clicks_hud_fog_dead (test_last_hit.ModelTests.test_never_chases_or_clicks_hud_fog_dead) ... ok
+test_no_preparation_if_own_attack_arrives_after_tower (test_last_hit.ModelTests.test_no_preparation_if_own_attack_arrives_after_tower) ... ok
+test_recycled_creep_does_not_inherit_shot (test_last_hit.ModelTests.test_recycled_creep_does_not_inherit_shot) ... ok
+test_repeated_attack_stamps_calibrate_interval (test_last_hit.ModelTests.test_repeated_attack_stamps_calibrate_interval) ... ok
+test_shot_already_in_hp_not_subtracted_as_certain (test_last_hit.ModelTests.test_shot_already_in_hp_not_subtracted_as_certain) ... ok
+test_tower_event_requires_stable_exact_target (test_last_hit.ModelTests.test_tower_event_requires_stable_exact_target) ... ok
+test_tower_prepare_then_last_hit (test_last_hit.ModelTests.test_tower_prepare_then_last_hit) ... ok
+test_turn_and_projectile_increase_impact (test_last_hit.ModelTests.test_turn_and_projectile_increase_impact) ... ok
+test_native_sidebar_build_and_mouse4_capture_present (test_last_hit.NativeTests.test_native_sidebar_build_and_mouse4_capture_present) ... ok
+test_reader_has_no_sender_or_memory_writer (test_last_hit.NativeTests.test_reader_has_no_sender_or_memory_writer) ... ok
+test_default_mouse4_and_alternative_mouse_keys (test_last_hit.ProtocolTests.test_default_mouse4_and_alternative_mouse_keys) ... ok
+test_reserved_and_bool_keys_refused (test_last_hit.ProtocolTests.test_reserved_and_bool_keys_refused) ... ok
+test_strict_shape_types_and_expiry (test_last_hit.ProtocolTests.test_strict_shape_types_and_expiry) ... ok
+test_missing_armor_rejected_not_default (test_last_hit.ReaderTests.test_missing_armor_rejected_not_default) ... ok
+test_nonfinite_stat_rejected_not_zero (test_last_hit.ReaderTests.test_nonfinite_stat_rejected_not_zero) ... ok
+test_pre_send_verifier_accepts_current_identity_position_hp (test_last_hit.ReaderTests.test_pre_send_verifier_accepts_current_identity_position_hp) ... ok
+test_pre_send_verifier_refuses_camera_or_target_motion (test_last_hit.ReaderTests.test_pre_send_verifier_refuses_camera_or_target_motion) ... ok
+test_pre_send_verifier_refuses_dead_and_hidden (test_last_hit.ReaderTests.test_pre_send_verifier_refuses_dead_and_hidden) ... ok
+test_pre_send_verifier_refuses_healed_or_damaged_target (test_last_hit.ReaderTests.test_pre_send_verifier_refuses_healed_or_damaged_target) ... ok
+test_pre_send_verifier_refuses_recycled_object (test_last_hit.ReaderTests.test_pre_send_verifier_refuses_recycled_object) ... ok
+test_real_schema_fields_and_full_serial_identity (test_last_hit.ReaderTests.test_real_schema_fields_and_full_serial_identity) ... ok
+test_tower_handle_must_match_serial_not_just_index (test_last_hit.ReaderTests.test_tower_handle_must_match_serial_not_just_index) ... ok
+test_unknown_or_dormant_unit_not_visible (test_last_hit.ReaderTests.test_unknown_or_dormant_unit_not_visible) ... ok
+test_disabled_after_fresh_rev_and_hold_does_not_retry (test_last_hit.ServiceTests.test_disabled_after_fresh_rev_and_hold_does_not_retry) ... ok
+test_expired_heartbeat_revokes_permission_between_polls (test_last_hit.ServiceTests.test_expired_heartbeat_revokes_permission_between_polls) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Крипов 1 · в дальности 1 · HP выше порога 0 · риск 0 · денай закрыт 0 · урон неизвестен 0
+ok
+test_expired_or_old_session_cannot_arm (test_last_hit.ServiceTests.test_expired_or_old_session_cannot_arm) ... ok
+test_fresh_command_required_after_failure (test_last_hit.ServiceTests.test_fresh_command_required_after_failure) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] OFF · нет подтверждения атаки / ошибка ввода; включи заново
+[LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_higher_priority_interrupt_is_not_misreported_as_input_failure (test_last_hit.ServiceTests.test_higher_priority_interrupt_is_not_misreported_as_input_failure) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Пауза · приоритет KS / Dodger
+[LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+ok
+test_ks_defense_reservation_blocks_last_hit (test_last_hit.ServiceTests.test_ks_defense_reservation_blocks_last_hit) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Пауза · приоритет KS / Dodger
+ok
+test_menu_and_unready_data_block (test_last_hit.ServiceTests.test_menu_and_unready_data_block) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Пауза · меню / фокус
+ok
+test_menu_interrupt_preserves_enabled_state (test_last_hit.ServiceTests.test_menu_interrupt_preserves_enabled_state) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Пауза · меню / фокус
+[LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+ok
+test_missing_feedback_latches_off_not_repeat (test_last_hit.ServiceTests.test_missing_feedback_latches_off_not_repeat) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] OFF · нет подтверждения атаки / ошибка ввода; включи заново
+ok
+test_mouse4_sends_then_pending_prevents_repeat (test_last_hit.ServiceTests.test_mouse4_sends_then_pending_prevents_repeat) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_pre_send_entity_verifier_failure_cannot_emit (test_last_hit.ServiceTests.test_pre_send_entity_verifier_failure_cannot_emit) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Пропуск · revoked
+ok
+test_preview_never_sends (test_last_hit.ServiceTests.test_preview_never_sends) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] PREVIEW · last_hit
+ok
+test_release_cancels_feedback_wait_without_fault (test_last_hit.ServiceTests.test_release_cancels_feedback_wait_without_fault) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+ok
+test_released_hold_sends_no_attack (test_last_hit.ServiceTests.test_released_hold_sends_no_attack) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+ok
+test_feedback_does_not_allow_repeat_on_projectile_target (test_last_hit_alpha2.MarkerServiceTests.test_feedback_does_not_allow_repeat_on_projectile_target) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈0.20с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Крипов 1 · в дальности 1 · HP выше порога 0 · риск 0 · денай закрыт 0 · урон неизвестен 0
+ok
+test_legacy_controls_keep_normal_mode_and_optional_types_strict (test_last_hit_alpha2.MarkerServiceTests.test_legacy_controls_keep_normal_mode_and_optional_types_strict) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_marker_is_actual_sent_uid_not_a_nearby_guess (test_last_hit_alpha2.MarkerServiceTests.test_marker_is_actual_sent_uid_not_a_nearby_guess) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_marker_preference_does_not_disable_automation (test_last_hit_alpha2.MarkerServiceTests.test_marker_preference_does_not_disable_automation) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_menu_and_priority_hide_marker (test_last_hit_alpha2.MarkerServiceTests.test_menu_and_priority_hide_marker) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Пауза · приоритет KS / Dodger
+ok
+test_missing_target_clears_ring_not_last_seen (test_last_hit_alpha2.MarkerServiceTests.test_missing_target_clears_ring_not_last_seen) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_pending_target_tracks_fresh_screen_not_old_point (test_last_hit_alpha2.MarkerServiceTests.test_pending_target_tracks_fresh_screen_not_old_point) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_quick_mode_passed_to_same_sender (test_last_hit_alpha2.MarkerServiceTests.test_quick_mode_passed_to_same_sender) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_release_hides_marker (test_last_hit_alpha2.MarkerServiceTests.test_release_hides_marker) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_stale_marker_hidden_even_without_another_tick (test_last_hit_alpha2.MarkerServiceTests.test_stale_marker_hidden_even_without_another_tick) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_wait_marker_has_no_input (test_last_hit_alpha2.MarkerServiceTests.test_wait_marker_has_no_input) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 0 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Крипов 1 · в дальности 1 · HP выше порога 1 · риск 0 · денай закрыт 0 · урон неизвестен 0
+ok
+test_actual_native_dto_expiry_and_default_quick_preferences (test_last_hit_alpha2.NativeMarkerTests.test_actual_native_dto_expiry_and_default_quick_preferences) ... ok
+test_draw_hook_and_physical_to_dip_coordinates_present (test_last_hit_alpha2.NativeMarkerTests.test_draw_hook_and_physical_to_dip_coordinates_present) ... ok
+test_age_can_expire_attack_cooldown_without_double_counting (test_last_hit_alpha2.PlanningTests.test_age_can_expire_attack_cooldown_without_double_counting) ... ok
+test_committed_uid_excluded_but_other_creep_can_be_selected (test_last_hit_alpha2.PlanningTests.test_committed_uid_excluded_but_other_creep_can_be_selected) ... ok
+test_multiple_recent_hits_still_reject_dead_before_impact (test_last_hit_alpha2.PlanningTests.test_multiple_recent_hits_still_reject_dead_before_impact) ... ok
+test_old_damage_does_not_persist_forever (test_last_hit_alpha2.PlanningTests.test_old_damage_does_not_persist_forever) ... ok
+test_old_frame_age_shifts_impact_window (test_last_hit_alpha2.PlanningTests.test_old_frame_age_shifts_impact_window) ... ok
+test_single_damage_burst_not_extrapolated_as_sustained_dps (test_last_hit_alpha2.PlanningTests.test_single_damage_burst_not_extrapolated_as_sustained_dps) ... ok
+test_stale_age_refused (test_last_hit_alpha2.PlanningTests.test_stale_age_refused) ... ok
+test_wait_candidate_is_not_permission_to_send (test_last_hit_alpha2.PlanningTests.test_wait_candidate_is_not_permission_to_send) ... ok
+test_alt_neutralized_before_packet_then_restored (test_last_hit_alpha2.QuickInputTests.test_alt_neutralized_before_packet_then_restored) ... ok
+test_bad_virtual_geometry_fails_closed (test_last_hit_alpha2.QuickInputTests.test_bad_virtual_geometry_fails_closed) ... ok
+test_end_or_own_key_held_blocks_quick (test_last_hit_alpha2.QuickInputTests.test_end_or_own_key_held_blocks_quick) ... ok
+test_exception_after_key_attempt_releases_key_not_lmb (test_last_hit_alpha2.QuickInputTests.test_exception_after_key_attempt_releases_key_not_lmb) ... ok
+test_expensive_permission_check_only_once (test_last_hit_alpha2.QuickInputTests.test_expensive_permission_check_only_once) ... ok
+test_moving_mouse_during_permission_check_does_not_cancel_quick_attack (test_last_hit_alpha2.QuickInputTests.test_moving_mouse_during_permission_check_does_not_cancel_quick_attack) ... ok
+test_negative_virtual_desktop_origin_is_supported (test_last_hit_alpha2.QuickInputTests.test_negative_virtual_desktop_origin_is_supported) ... ok
+test_one_atomic_move_and_key_packet_without_lmb (test_last_hit_alpha2.QuickInputTests.test_one_atomic_move_and_key_packet_without_lmb) ... ok
+test_partial_key_down_released_no_mouse_button_events (test_last_hit_alpha2.QuickInputTests.test_partial_key_down_released_no_mouse_button_events) ... ok
+test_partial_move_only_does_not_invent_key_or_click (test_last_hit_alpha2.QuickInputTests.test_partial_move_only_does_not_invent_key_or_click) ... ok
+test_physical_alt_release_during_send_is_not_repressed (test_last_hit_alpha2.QuickInputTests.test_physical_alt_release_during_send_is_not_repressed) ... ok
+test_release_or_revocation_before_packet_never_moves_cursor (test_last_hit_alpha2.QuickInputTests.test_release_or_revocation_before_packet_never_moves_cursor) ... ok
+test_deny_is_normal_attack_key_plus_left_click (test_last_hit_alpha3.ClickAndStopInputTests.test_deny_is_normal_attack_key_plus_left_click) ... ok
+test_enemy_is_move_right_click_not_attack_move_key (test_last_hit_alpha3.ClickAndStopInputTests.test_enemy_is_move_right_click_not_attack_move_key) ... ok
+test_held_manual_right_mouse_not_synthesized_again (test_last_hit_alpha3.ClickAndStopInputTests.test_held_manual_right_mouse_not_synthesized_again) ... ok
+test_partial_deny_key_is_released_without_new_click (test_last_hit_alpha3.ClickAndStopInputTests.test_partial_deny_key_is_released_without_new_click) ... ok
+test_partial_right_button_down_is_released (test_last_hit_alpha3.ClickAndStopInputTests.test_partial_right_button_down_is_released) ... ok
+test_revocation_before_click_emits_nothing (test_last_hit_alpha3.ClickAndStopInputTests.test_revocation_before_click_emits_nothing) ... ok
+test_stop_does_not_move_cursor_or_click (test_last_hit_alpha3.ClickAndStopInputTests.test_stop_does_not_move_cursor_or_click) ... ok
+test_stop_revocation_and_end_guard (test_last_hit_alpha3.ClickAndStopInputTests.test_stop_revocation_and_end_guard) ... ok
+test_already_killable_not_vetoed_only_by_speculative_dps (test_last_hit_alpha3.DamageAndAimTests.test_already_killable_not_vetoed_only_by_speculative_dps) ... ok
+test_armor_and_live_hero_damage_change_threshold (test_last_hit_alpha3.DamageAndAimTests.test_armor_and_live_hero_damage_change_threshold) ... ok
+test_collision_body_aim_preserves_ground_world_position (test_last_hit_alpha3.DamageAndAimTests.test_collision_body_aim_preserves_ground_world_position) ... ok
+test_known_tower_event_still_blocks_expected_dead_target (test_last_hit_alpha3.DamageAndAimTests.test_known_tower_event_still_blocks_expected_dead_target) ... ok
+test_missing_collision_uses_geometric_not_damage_fallback (test_last_hit_alpha3.DamageAndAimTests.test_missing_collision_uses_geometric_not_damage_fallback) ... ok
+test_negative_armor_keeps_increased_physical_damage (test_last_hit_alpha3.DamageAndAimTests.test_negative_armor_keeps_increased_physical_damage) ... ok
+test_reader_damage_bonus_is_added_once (test_last_hit_alpha3.DamageAndAimTests.test_reader_damage_bonus_is_added_once) ... ok
+test_reserve_is_explicit_not_fabricated_damage (test_last_hit_alpha3.DamageAndAimTests.test_reserve_is_explicit_not_fabricated_damage) ... ok
+test_injected_events_and_mouse_motion_not_manual (test_last_hit_alpha3.ManualObserverTests.test_injected_events_and_mouse_motion_not_manual) ... ok
+test_missing_or_stale_hook_disables_token (test_last_hit_alpha3.ManualObserverTests.test_missing_or_stale_hook_disables_token) ... ok
+test_non_modifier_press_changes_generation_not_text_history (test_last_hit_alpha3.ManualObserverTests.test_non_modifier_press_changes_generation_not_text_history) ... ok
+test_real_mouse_click_and_wheel_cancel_ownership (test_last_hit_alpha3.ManualObserverTests.test_real_mouse_click_and_wheel_cancel_ownership) ... ok
+test_repeat_and_release_not_new_orders (test_last_hit_alpha3.ManualObserverTests.test_repeat_and_release_not_new_orders) ... ok
+test_changed_hero_expiry_or_clock_reset_revokes_order (test_last_hit_alpha3.OwnedOrderTests.test_changed_hero_expiry_or_clock_reset_revokes_order) ... ok
+test_changed_timestamp_does_not_stop_windup (test_last_hit_alpha3.OwnedOrderTests.test_changed_timestamp_does_not_stop_windup) ... ok
+test_no_stop_just_because_packet_was_sent (test_last_hit_alpha3.OwnedOrderTests.test_no_stop_just_because_packet_was_sent) ... ok
+test_one_missing_sample_is_not_dead_target_proof (test_last_hit_alpha3.OwnedOrderTests.test_one_missing_sample_is_not_dead_target_proof) ... ok
+test_stale_or_incomplete_frame_never_allows_stop (test_last_hit_alpha3.OwnedOrderTests.test_stale_or_incomplete_frame_never_allows_stop) ... ok
+test_stop_after_confirmed_activity_and_windup (test_last_hit_alpha3.OwnedOrderTests.test_stop_after_confirmed_activity_and_windup) ... ok
+test_busy_manual_cast_revokes_stop (test_last_hit_alpha3.SingleHitServiceTests.test_busy_manual_cast_revokes_stop) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Пауза · герой занят / данные устарели
+ok
+test_damage_armor_visible_on_marker (test_last_hit_alpha3.SingleHitServiceTests.test_damage_armor_visible_on_marker) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_hero_identity_change_refuses_stop (test_last_hit_alpha3.SingleHitServiceTests.test_hero_identity_change_refuses_stop) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_higher_priority_action_revokes_delayed_stop (test_last_hit_alpha3.SingleHitServiceTests.test_higher_priority_action_revokes_delayed_stop) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Пауза · приоритет KS / Dodger
+ok
+test_manual_cancellation_does_not_later_latch_feedback_fault (test_last_hit_alpha3.SingleHitServiceTests.test_manual_cancellation_does_not_later_latch_feedback_fault) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+[LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_manual_command_revokes_delayed_stop (test_last_hit_alpha3.SingleHitServiceTests.test_manual_command_revokes_delayed_stop) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_missing_observer_cannot_arm_single_hit_transaction (test_last_hit_alpha3.SingleHitServiceTests.test_missing_observer_cannot_arm_single_hit_transaction) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Пауза · нет наблюдения ручных команд для режима одной атаки
+ok
+test_old_revision_cannot_stop_after_bind_change (test_last_hit_alpha3.SingleHitServiceTests.test_old_revision_cannot_stop_after_bind_change) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_release_never_sends_late_stop (test_last_hit_alpha3.SingleHitServiceTests.test_release_never_sends_late_stop) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_stop_once_after_own_attack_not_on_input_submission (test_last_hit_alpha3.SingleHitServiceTests.test_stop_once_after_own_attack_not_on_input_submission) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_strict_optional_control_fields (test_last_hit_alpha3.SingleHitServiceTests.test_strict_optional_control_fields) ... ok
+test_target_loss_does_not_latch_whole_module_off (test_last_hit_alpha3.SingleHitServiceTests.test_target_loss_does_not_latch_whole_module_off) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+[LAST HIT] Найдено 0 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 0 · готовы 0 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Линейные крипы не прочитаны · см. счётчики
+ok
+test_target_present_no_feedback_still_faults_not_blind_retry (test_last_hit_alpha3.SingleHitServiceTests.test_target_present_no_feedback_still_faults_not_blind_retry) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] OFF · нет подтверждения атаки / ошибка ввода; включи заново
+ok
+test_bad_target_is_counted_without_hiding_other_targets (test_last_hit_alpha4.ActualCaptureTests.test_bad_target_is_counted_without_hiding_other_targets) ... ok
+test_base_rtti_uses_live_unit_name_not_generic_designer (test_last_hit_alpha4.ActualCaptureTests.test_base_rtti_uses_live_unit_name_not_generic_designer) ... ok
+test_full_capture_to_planner_all_four_can_be_selected (test_last_hit_alpha4.ActualCaptureTests.test_full_capture_to_planner_all_four_can_be_selected) ... ok
+test_real_capture_reads_all_four_without_target_attack_timing (test_last_hit_alpha4.ActualCaptureTests.test_real_capture_reads_all_four_without_target_attack_timing) ... ok
+test_siege_with_unknown_modifier_is_visible_but_not_auto_targeted (test_last_hit_alpha4.ActualCaptureTests.test_siege_with_unknown_modifier_is_visible_but_not_auto_targeted) ... ok
+test_unrecognized_type_has_its_own_counter (test_last_hit_alpha4.ActualCaptureTests.test_unrecognized_type_has_its_own_counter) ... ok
+test_actual_dot_entity_scan_recovers_creep_above_reported_highest_index (test_last_hit_alpha4.LaneVocabularyTests.test_actual_dot_entity_scan_recovers_creep_above_reported_highest_index) ... ok
+test_all_four_both_teams_and_upgrades (test_last_hit_alpha4.LaneVocabularyTests.test_all_four_both_teams_and_upgrades) ... ok
+test_full_entity_list_not_highest_index_only (test_last_hit_alpha4.LaneVocabularyTests.test_full_entity_list_not_highest_index_only) ... ok
+test_known_derived_classes_and_generic_designer (test_last_hit_alpha4.LaneVocabularyTests.test_known_derived_classes_and_generic_designer) ... ok
+test_neutrals_summons_and_heroes_not_promoted_to_lane (test_last_hit_alpha4.LaneVocabularyTests.test_neutrals_summons_and_heroes_not_promoted_to_lane) ... ok
+test_changed_agility_or_item_speed_invalidates_old_calibration (test_last_hit_alpha4.LiveStatsTests.test_changed_agility_or_item_speed_invalidates_old_calibration) ... ok
+test_foreign_owner_refused (test_last_hit_alpha4.LiveStatsTests.test_foreign_owner_refused) ... ok
+test_integer_fields_are_not_misread_as_denormal_zero (test_last_hit_alpha4.LiveStatsTests.test_integer_fields_are_not_misread_as_denormal_zero) ... ok
+test_numeric_unknown_nan_and_huge_values_refused (test_last_hit_alpha4.LiveStatsTests.test_numeric_unknown_nan_and_huge_values_refused) ... ok
+test_phase_treads_and_two_wraith_bands_add_live_values (test_last_hit_alpha4.LiveStatsTests.test_phase_treads_and_two_wraith_bands_add_live_values) ... ok
+test_siege_absence_requires_complete_verified_vector (test_last_hit_alpha4.LiveStatsTests.test_siege_absence_requires_complete_verified_vector) ... ok
+test_siege_incoming_penalty_is_live_not_hardcoded (test_last_hit_alpha4.LiveStatsTests.test_siege_incoming_penalty_is_live_not_hardcoded) ... ok
+test_similar_idle_gaps_cannot_slow_live_ias_estimate (test_last_hit_alpha4.LiveStatsTests.test_similar_idle_gaps_cannot_slow_live_ias_estimate) ... ok
+test_unreadable_stat_not_silently_zero (test_last_hit_alpha4.LiveStatsTests.test_unreadable_stat_not_silently_zero) ... ok
+test_helper_only_mode_cannot_send_even_while_held (test_last_hit_alpha4.ServiceRebuildTests.test_helper_only_mode_cannot_send_even_while_held) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] HELPER · только подсветка
+ok
+test_helper_without_hold_shows_target_but_sends_nothing (test_last_hit_alpha4.ServiceRebuildTests.test_helper_without_hold_shows_target_but_sends_nothing) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+ok
+test_invalid_options_fail_closed (test_last_hit_alpha4.ServiceRebuildTests.test_invalid_options_fail_closed) ... ok
+test_manual_actions_do_not_block_by_default (test_last_hit_alpha4.ServiceRebuildTests.test_manual_actions_do_not_block_by_default) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_manual_pause_opt_in_does_not_hide_detection (test_last_hit_alpha4.ServiceRebuildTests.test_manual_pause_opt_in_does_not_hide_detection) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Пауза · новая ручная команда
+ok
+test_out_of_range_is_visible_with_separate_reason (test_last_hit_alpha4.ServiceRebuildTests.test_out_of_range_is_visible_with_separate_reason) ... [LAST HIT] Найдено 1 · Мечник:0 / Дальний:1 / Знаменосец:0 / Катапульта:0 · в дальности 0 · готовы 0 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] Крипов 1 · в дальности 0 · HP выше порога 0 · риск 0 · денай закрыт 0 · урон неизвестен 0
+ok
+test_stale_helper_never_shows_old_creeps (test_last_hit_alpha4.ServiceRebuildTests.test_stale_helper_never_shows_old_creeps) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+ok
+test_toggle_cannot_arm_through_open_menu (test_last_hit_alpha4.ServiceRebuildTests.test_toggle_cannot_arm_through_open_menu) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+ok
+test_toggle_first_press_on_release_stays_second_press_off (test_last_hit_alpha4.ServiceRebuildTests.test_toggle_first_press_on_release_stays_second_press_off) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_toggle_is_not_key_autorepeat (test_last_hit_alpha4.ServiceRebuildTests.test_toggle_is_not_key_autorepeat) ... [LAST HIT] Найдено 1 · Мечник:1 / Дальний:0 / Знаменосец:0 / Катапульта:0 · в дальности 1 · готовы 1 · ошибки 0 · классы? 0 · интервал ≈1.00с
+[LAST HIT] ATTACK · fake
+[LAST HIT] Ожидание атаки / интервала
+ok
+test_absolute_and_escaping_paths_are_refused (test_last_hit_assets_fix1.SplitNPCTests.test_absolute_and_escaping_paths_are_refused) ... ok
+test_comments_quoted_slashes_empty_values_and_braces (test_last_hit_assets_fix1.SplitNPCTests.test_comments_quoted_slashes_empty_values_and_braces) ... ok
+test_crc_mismatch_in_dependency_stops_loading (test_last_hit_assets_fix1.SplitNPCTests.test_crc_mismatch_in_dependency_stops_loading) ... ok
+test_directive_cycle_is_refused (test_last_hit_assets_fix1.SplitNPCTests.test_directive_cycle_is_refused) ... ok
+test_first_base_value_wins_without_losing_other_rows (test_last_hit_assets_fix1.SplitNPCTests.test_first_base_value_wins_without_losing_other_rows) ... ok
+test_flat_old_format_remains_supported (test_last_hit_assets_fix1.SplitNPCTests.test_flat_old_format_remains_supported) ... ok
+test_local_fields_override_base_recursively (test_last_hit_assets_fix1.SplitNPCTests.test_local_fields_override_base_recursively) ... ok
+test_loose_hero_override_takes_precedence_over_vpk (test_last_hit_assets_fix1.SplitNPCTests.test_loose_hero_override_takes_precedence_over_vpk) ... ok
+test_loose_manifest_with_packed_dependencies (test_last_hit_assets_fix1.SplitNPCTests.test_loose_manifest_with_packed_dependencies) ... ok
+test_malformed_quotes_and_missing_values_refused (test_last_hit_assets_fix1.SplitNPCTests.test_malformed_quotes_and_missing_values_refused) ... ok
+test_missing_dependency_is_named_not_silently_ignored (test_last_hit_assets_fix1.SplitNPCTests.test_missing_dependency_is_named_not_silently_ignored) ... ok
+test_nested_relative_dependencies_and_repeated_include (test_last_hit_assets_fix1.SplitNPCTests.test_nested_relative_dependencies_and_repeated_include) ... ok
+test_one_vpk_index_for_all_dependencies (test_last_hit_assets_fix1.SplitNPCTests.test_one_vpk_index_for_all_dependencies) ... ok
+test_path_through_symlink_cannot_leave_installation (test_last_hit_assets_fix1.SplitNPCTests.test_path_through_symlink_cannot_leave_installation) ... ok
+test_reproduces_old_empty_manifest_failure_then_loads_antimage (test_last_hit_assets_fix1.SplitNPCTests.test_reproduces_old_empty_manifest_failure_then_loads_antimage) ... ok
+test_split_vpk_v1_v2_preload_embedded_and_external (test_last_hit_assets_fix1.SplitNPCTests.test_split_vpk_v1_v2_preload_embedded_and_external) ... ok
+test_units_inherit_their_own_defaults_not_hero_defaults (test_last_hit_assets_fix1.SplitNPCTests.test_units_inherit_their_own_defaults_not_hero_defaults) ... ok
+test_all_three_real_capture_vectors (test_live_stacks.ReplayTests.test_all_three_real_capture_vectors) ... ok
+test_bad_manager_owner_blocks (test_live_stacks.ReplayTests.test_bad_manager_owner_blocks) ... ok
+test_bad_owner_blocks (test_live_stacks.ReplayTests.test_bad_owner_blocks) ... ok
+test_duplicate_vector_blocks (test_live_stacks.ReplayTests.test_duplicate_vector_blocks) ... ok
+test_layout_validation (test_live_stacks.ReplayTests.test_layout_validation) ... ok
+test_missing_counter_only_zero_after_complete_list_validation (test_live_stacks.ReplayTests.test_missing_counter_only_zero_after_complete_list_validation) ... ok
+test_negative_or_huge_count_blocks (test_live_stacks.ReplayTests.test_negative_or_huge_count_blocks) ... ok
+test_oversized_vector_blocks (test_live_stacks.ReplayTests.test_oversized_vector_blocks) ... ok
+test_reads_current_value_not_cached_value (test_live_stacks.ReplayTests.test_reads_current_value_not_cached_value) ... ok
+test_torn_read_blocks (test_live_stacks.ReplayTests.test_torn_read_blocks) ... ok
+test_unknown_type_not_zero (test_live_stacks.ReplayTests.test_unknown_type_not_zero) ... ok
+test_wrong_build_blocks (test_live_stacks.ReplayTests.test_wrong_build_blocks) ... ok
+test_wrong_schema_blocks (test_live_stacks.ReplayTests.test_wrong_schema_blocks) ... ok
+test_base_plus_stack_then_resistance (test_live_stacks.StackFormulaTests.test_base_plus_stack_then_resistance) ... ok
+test_forty_five_only_if_talent_learned (test_live_stacks.StackFormulaTests.test_forty_five_only_if_talent_learned) ... ok
+test_invalid_count_does_not_create_bonus (test_live_stacks.StackFormulaTests.test_invalid_count_does_not_create_bonus) ... ok
+test_twenty_five_per_stack (test_live_stacks.StackFormulaTests.test_twenty_five_per_stack) ... ok
+test_unknown_count_blocks_finger (test_live_stacks.StackFormulaTests.test_unknown_count_blocks_finger) ... ok
+test_unknown_talent_uses_only_confirmed_per_stack_damage (test_live_stacks.StackFormulaTests.test_unknown_talent_uses_only_confirmed_per_stack_damage) ... ok
+test_zero_count_does_not_need_talent_for_zero_bonus (test_live_stacks.StackFormulaTests.test_zero_count_does_not_need_talent_for_zero_bonus) ... ok
+test_learned_and_unlearned (test_live_stacks.TalentTests.test_learned_and_unlearned) ... ok
+test_level_not_hero_level (test_live_stacks.TalentTests.test_level_not_hero_level) ... ok
+test_missing_talent_not_assumed_unlearned (test_live_stacks.TalentTests.test_missing_talent_not_assumed_unlearned) ... ok
+test_torn_talent_rejected (test_live_stacks.TalentTests.test_torn_talent_rejected) ... ok
+test_enemy_roster_is_current_visible_feed_limited_to_five (test_overlay_hud.OverlayHudContractTests.test_enemy_roster_is_current_visible_feed_limited_to_five) ... ok
+test_hero_plate_position_uses_current_projection_without_easing_lag (test_overlay_hud.OverlayHudContractTests.test_hero_plate_position_uses_current_projection_without_easing_lag) ... ok
+test_no_hero_pin_fields_and_stale_feed_clears_roster (test_overlay_hud.OverlayHudContractTests.test_no_hero_pin_fields_and_stale_feed_clears_roster) ... ok
+test_overhead_plates_are_clipped_to_dota_and_offscreen_targets_skipped (test_overlay_hud.OverlayHudContractTests.test_overhead_plates_are_clipped_to_dota_and_offscreen_targets_skipped) ... ok
+test_panel_and_overhead_plates_are_independent_controls (test_overlay_hud.OverlayHudContractTests.test_panel_and_overhead_plates_are_independent_controls) ... ok
+test_static_enemy_cards_render_hp_and_ability_cooldowns (test_overlay_hud.OverlayHudContractTests.test_static_enemy_cards_render_hp_and_ability_cooldowns) ... ok
+test_bad_offsets_or_duplicate_filenames_fail_closed (test_patch_bundle.PatchBundleTests.test_bad_offsets_or_duplicate_filenames_fail_closed) ... ok
+test_clean_start_applies_staged_bundle_in_preview_and_creates_backup (test_patch_bundle.PatchBundleTests.test_clean_start_applies_staged_bundle_in_preview_and_creates_backup) ... ok
+test_existing_pending_import_is_not_overwritten (test_patch_bundle.PatchBundleTests.test_existing_pending_import_is_not_overwritten) ... ok
+test_in_app_import_rejects_user_supplied_profiles_directly_or_in_zip (test_patch_bundle.PatchBundleTests.test_in_app_import_rejects_user_supplied_profiles_directly_or_in_zip) ... ok
+test_invalid_profiles_are_rejected_before_staging (test_patch_bundle.PatchBundleTests.test_invalid_profiles_are_rejected_before_staging) ... ok
+test_maps_standard_offsets_using_engine_build_not_info_number (test_patch_bundle.PatchBundleTests.test_maps_standard_offsets_using_engine_build_not_info_number) ... ok
+test_optional_user_profiles_are_validated_and_installed_safely (test_patch_bundle.PatchBundleTests.test_optional_user_profiles_are_validated_and_installed_safely) ... ok
+test_recognizes_nested_zip_without_extracting_and_stages_one_selection (test_patch_bundle.PatchBundleTests.test_recognizes_nested_zip_without_extracting_and_stages_one_selection) ... ok
+test_staged_file_hash_mismatch_prevents_apply (test_patch_bundle.PatchBundleTests.test_staged_file_hash_mismatch_prevents_apply) ... ok
+test_apply_preview_and_rollback_byte_exact (test_patch_update.PatchTests.test_apply_preview_and_rollback_byte_exact) ... ok
+test_backup_failure_leaves_installation_unlocked (test_patch_update.PatchTests.test_backup_failure_leaves_installation_unlocked) ... ok
+test_changed_public_field_only (test_patch_update.PatchTests.test_changed_public_field_only) ... ok
+test_cli_dry_run_and_missing_globals_never_write (test_patch_update.PatchTests.test_cli_dry_run_and_missing_globals_never_write) ... ERROR: --apply requires BOTH --schema and --globals from the same build
+ok
+test_cli_template_does_not_overwrite (test_patch_update.PatchTests.test_cli_template_does_not_overwrite) ... ERROR: [Errno 17] File exists: '/tmp/tmpdcoxwvg2/globals.json'
+ok
+test_constant_rewrite_preserves_comments (test_patch_update.PatchTests.test_constant_rewrite_preserves_comments) ... ok
+test_current_schema_has_no_offset_diff (test_patch_update.PatchTests.test_current_schema_has_no_offset_diff) ... ok
+test_duplicate_json_keys_and_nonfinite (test_patch_update.PatchTests.test_duplicate_json_keys_and_nonfinite) ... ok
+test_invalid_gameplay_config_rejected_before_commit (test_patch_update.PatchTests.test_invalid_gameplay_config_rejected_before_commit) ... ok
+test_lock_blocks_second_writer (test_patch_update.PatchTests.test_lock_blocks_second_writer) ... ok
+test_manifest_bound_to_exact_schema (test_patch_update.PatchTests.test_manifest_bound_to_exact_schema) ... ok
+test_mid_commit_failure_restores_original (test_patch_update.PatchTests.test_mid_commit_failure_restores_original) ... ok
+test_missing_field_rejected (test_patch_update.PatchTests.test_missing_field_rejected) ... ok
+test_non_integer_offsets_rejected (test_patch_update.PatchTests.test_non_integer_offsets_rejected) ... ok
+test_recovery_from_partial_commit (test_patch_update.PatchTests.test_recovery_from_partial_commit) ... ok
+test_rollback_confined_to_installation (test_patch_update.PatchTests.test_rollback_confined_to_installation) ... ok
+test_rollback_refuses_corrupt_backup (test_patch_update.PatchTests.test_rollback_refuses_corrupt_backup) ... ok
+test_rollback_refuses_profile_edits (test_patch_update.PatchTests.test_rollback_refuses_profile_edits) ... ok
+test_unknown_global_and_bad_build_rejected (test_patch_update.PatchTests.test_unknown_global_and_bad_build_rejected) ... ok
+test_changed_particle_bytes_are_detected_and_replaced_identity_not_merged (test_probe_analysis.ProbeAnalysisTests.test_changed_particle_bytes_are_detected_and_replaced_identity_not_merged) ... ok
+test_initial_stale_order_is_not_new_command (test_probe_analysis.ProbeAnalysisTests.test_initial_stale_order_is_not_new_command) ... ok
+test_manifest_mismatch_is_explicit (test_probe_analysis.ProbeAnalysisTests.test_manifest_mismatch_is_explicit) ... ok
+test_no_memory_reader_or_automation_imports (test_probe_analysis.ProbeAnalysisTests.test_no_memory_reader_or_automation_imports) ... ok
+test_order_hypothesis_requires_observed_block_and_identity (test_probe_analysis.ProbeAnalysisTests.test_order_hypothesis_requires_observed_block_and_identity) ... ok
+test_real_cancel_contains_same_early_header_pulse_without_cooldown (test_probe_analysis.ProbeAnalysisTests.test_real_cancel_contains_same_early_header_pulse_without_cooldown) ... ok
+test_real_other_target_is_bloodseeker_not_any_nearest_hero (test_probe_analysis.ProbeAnalysisTests.test_real_other_target_is_bloodseeker_not_any_nearest_hero) ... ok
+test_real_sparse_fixture_does_not_pretend_to_be_full_capture (test_probe_analysis.ProbeAnalysisTests.test_real_sparse_fixture_does_not_pretend_to_be_full_capture) ... ok
+test_static_particle_fields_are_not_claimed_to_be_projectiles (test_probe_analysis.ProbeAnalysisTests.test_static_particle_fields_are_not_claimed_to_be_projectiles) ... ok
+test_unreadable_or_short_header_stays_unknown (test_probe_analysis.ProbeAnalysisTests.test_unreadable_or_short_header_stays_unknown) ... ok
+test_disabled_blocks_input_but_legacy_f6_is_not_a_killsteal_toggle (test_reader_input.InputTests.test_disabled_blocks_input_but_legacy_f6_is_not_a_killsteal_toggle) ... ok
+test_escape_does_not_interrupt_killsteal_input (test_reader_input.InputTests.test_escape_does_not_interrupt_killsteal_input) ... ok
+test_global_does_not_move_cursor (test_reader_input.InputTests.test_global_does_not_move_cursor) ... ok
+test_insert_menu_key_blocks_native_cast (test_reader_input.InputTests.test_insert_menu_key_blocks_native_cast) ... ok
+test_no_target_does_not_move_cursor (test_reader_input.InputTests.test_no_target_does_not_move_cursor) ... ok
+test_own_key_chat_keys_and_untracked_modifiers_block (test_reader_input.InputTests.test_own_key_chat_keys_and_untracked_modifiers_block) ... ok
+test_partial_send_keyup_cleanup_no_mouse (test_reader_input.InputTests.test_partial_send_keyup_cleanup_no_mouse) ... ok
+test_point_aims_at_ground_not_body_offset (test_reader_input.InputTests.test_point_aims_at_ground_not_body_offset) ... ok
+test_quickcast_keyboard_only_without_hold (test_reader_input.InputTests.test_quickcast_keyboard_only_without_hold) ... ok
+test_refocus_guard_after_move (test_reader_input.InputTests.test_refocus_guard_after_move) ... ok
+test_stale_before_send (test_reader_input.InputTests.test_stale_before_send) ... ok
+test_stop_after_move (test_reader_input.InputTests.test_stop_after_move) ... ok
+test_dagon_level_is_profile_data_not_reader_special_case (test_reader_input.ReaderTests.test_dagon_level_is_profile_data_not_reader_special_case) ... ok
+test_discovery_not_limited_to_seven (test_reader_input.ReaderTests.test_discovery_not_limited_to_seven) ... ok
+test_failed_stack_read_does_not_fabricate_zero (test_reader_input.ReaderTests.test_failed_stack_read_does_not_fabricate_zero) ... ok
+test_live_stack_data_reaches_damage_model (test_reader_input.ReaderTests.test_live_stack_data_reaches_damage_model) ... ok
+test_motion_needs_stable_fresh_samples (test_reader_input.ReaderTests.test_motion_needs_stable_fresh_samples) ... ok
+test_motion_resets_on_stale_fog_or_entity_change (test_reader_input.ReaderTests.test_motion_resets_on_stale_fog_or_entity_change) ... ok
+test_negative_cooldown_rejected (test_reader_input.ReaderTests.test_negative_cooldown_rejected) ... ok
+test_new_profile_discovered_without_reader_edits (test_reader_input.ReaderTests.test_new_profile_discovered_without_reader_edits) ... ok
+test_old_channel_start_not_permanent (test_reader_input.ReaderTests.test_old_channel_start_not_permanent) ... ok
+test_schema_mismatch (test_reader_input.ReaderTests.test_schema_mismatch) ... ok
+test_strict_read_does_not_turn_failure_into_ready (test_reader_input.ReaderTests.test_strict_read_does_not_turn_failure_into_ready) ... ok
+test_automatic_second_cast_after_confirmed_cd_and_recovery (test_service.ServiceTests.test_automatic_second_cast_after_confirmed_cd_and_recovery) ... Staged patch applied. PREVIEW ONLY; private modifier approval removed.
+Backup: /tmp/tmppkydz39m/.patch_backups/20260929-055709-c6116b9a
+Constant changes: 0
+Rollback: py -3.11 patch_update.py --rollback "/tmp/tmppkydz39m/.patch_backups/20260929-055709-c6116b9a"
+buttons.json was validated and archived, not mapped to HACHBOB hotkeys: attack, forward
+Staged patch discarded; installed files unchanged.
+Staged patch applied. PREVIEW ONLY; private modifier approval removed.
+Backup: /tmp/tmpffkbfb18/.patch_backups/20260929-055710-fb13416d
+Constant changes: 0
+Rollback: py -3.11 patch_update.py --rollback "/tmp/tmpffkbfb18/.patch_backups/20260929-055710-fb13416d"
+buttons.json was validated and archived, not mapped to HACHBOB hotkeys: attack, forward
+HACHBOB: 71 schema fields checked; 0 constant changes.
+No mapped constant changes.
+NOT verified: private layouts, game balance, running-game compatibility.
+DRY RUN: installation unchanged. No internet lookup or automatic RVA discovery.
+Apply will force PREVIEW and invalidate private modifier approval.
+[DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_death_pauses_and_resumes_without_rearming (test_service.ServiceTests.test_death_pauses_and_resumes_without_rearming) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_enter_tab_preserve_enabled_and_resume_on_release (test_service.ServiceTests.test_enter_tab_preserve_enabled_and_resume_on_release) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO ON | ПАУЗА: удерживается Enter; включённое состояние сохранено]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_escape_does_not_turn_off_killsteal (test_service.ServiceTests.test_escape_does_not_turn_off_killsteal) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_f6_does_not_arm_or_toggle_killsteal (test_service.ServiceTests.test_f6_does_not_arm_or_toggle_killsteal) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_f6_does_not_turn_off_ui_armed_state (test_service.ServiceTests.test_f6_does_not_turn_off_ui_armed_state) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_failed_input_off_and_no_automatic_retry (test_service.ServiceTests.test_failed_input_off_and_no_automatic_retry) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 FAILED / OFF | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Ошибка ввода; повтор автоматически запрещён]
+ok
+test_focus_off_no_auto_resume (test_service.ServiceTests.test_focus_off_no_auto_resume) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_global_offscreen_runs_through_toggle_service (test_service.ServiceTests.test_global_offscreen_runs_through_toggle_service) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | zuus_thundergods_wrath -> bounty_hunter: ~420 / нужно 190 | fake backend only]
+ok
+test_held_own_spell_key_is_not_pressed_again (test_service.ServiceTests.test_held_own_spell_key_is_not_pressed_again) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_hero_change_turns_off (test_service.ServiceTests.test_hero_change_turns_off) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_holding_f6_does_not_arm_or_cast (test_service.ServiceTests.test_holding_f6_does_not_arm_or_cast) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_long_stale_turns_off (test_service.ServiceTests.test_long_stale_turns_off) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Данные/геометрия недоступны более 2.0 сек]
+ok
+test_manual_mouse_does_not_pause_or_disarm (test_service.ServiceTests.test_manual_mouse_does_not_pause_or_disarm) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_menu_arm_waits_for_closed_menu_and_safe_live_data (test_service.ServiceTests.test_menu_arm_waits_for_closed_menu_and_safe_live_data) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | Ожидание безопасного включения из меню: закрой меню]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_menu_file_disarms_without_clearing_pending (test_service.ServiceTests.test_menu_file_disarms_without_clearing_pending) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_menu_open_flag_blocks_even_when_game_still_focused (test_service.ServiceTests.test_menu_open_flag_blocks_even_when_game_still_focused) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_no_cd_no_spam (test_service.ServiceTests.test_no_cd_no_spam) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+[KS5 AUTO ON | Ожидается изменение CD: lion_finger_of_death]
+[KS5 AUTO ON | lion_finger_of_death: нет подтверждения CD после предыдущей попытки]
+ok
+test_old_menu_session_file_ignored (test_service.ServiceTests.test_old_menu_session_file_ignored) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_other_spell_key_does_not_pause (test_service.ServiceTests.test_other_spell_key_does_not_pause) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_preview_never_sends (test_service.ServiceTests.test_preview_never_sends) ... [DODGER PREVIEW OFF] Выключен
+[KS5 PREVIEW OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_program_armed_state_runs_without_hotkey (test_service.ServiceTests.test_program_armed_state_runs_without_hotkey) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_sent_status_is_not_printed_twice (test_service.ServiceTests.test_sent_status_is_not_printed_twice) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_skipped_input_does_not_create_pending (test_service.ServiceTests.test_skipped_input_does_not_create_pending) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_stale_short_pause_recovers (test_service.ServiceTests.test_stale_short_pause_recovers) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+[KS5 SENT | lion_finger_of_death -> bounty_hunter: ~438 / нужно 190 | fake backend only]
+ok
+test_start_off_no_input (test_service.ServiceTests.test_start_off_no_input) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_unknown_target_inventory_still_blocked (test_service.ServiceTests.test_unknown_target_inventory_still_blocked) ... [DODGER AUTO OFF] Выключен
+[KS5 AUTO OFF | Нажми кнопку Killsteal в меню | После запуска всегда OFF]
+ok
+test_wire_and_status (test_service.ServiceTests.test_wire_and_status) ... ok
+test_dot_exports_records_not_just_names (test_talent_snapshot.DotTalentVectorTests.test_dot_exports_records_not_just_names) ... ok
+test_unreadable_level_is_unknown_not_zero (test_talent_snapshot.DotTalentVectorTests.test_unreadable_level_is_unknown_not_zero) ... ok
+test_accepts_learned_and_unlearned_levels_only_from_live_entity (test_talent_snapshot.TalentSnapshotTests.test_accepts_learned_and_unlearned_levels_only_from_live_entity) ... ok
+test_duplicate_talent_is_not_guessed (test_talent_snapshot.TalentSnapshotTests.test_duplicate_talent_is_not_guessed) ... ok
+test_missing_talent_reports_detected_names (test_talent_snapshot.TalentSnapshotTests.test_missing_talent_reports_detected_names) ... ok
+test_rejects_changed_entity_identity (test_talent_snapshot.TalentSnapshotTests.test_rejects_changed_entity_identity) ... ok
+test_rejects_snapshot_and_live_level_disagreement (test_talent_snapshot.TalentSnapshotTests.test_rejects_snapshot_and_live_level_disagreement) ... ok
+test_rejects_torn_or_invalid_level (test_talent_snapshot.TalentSnapshotTests.test_rejects_torn_or_invalid_level) ... ok
+test_announcers_excluded_without_removing_actual_heroes (test_target_probe.ProbeFixTests.test_announcers_excluded_without_removing_actual_heroes) ... ok
+test_decoder_accepts_old_renamed_jsonl (test_target_probe.ProbeFixTests.test_decoder_accepts_old_renamed_jsonl) ... ok
+test_interning_budget_falls_back_to_literal_without_losing_bytes (test_target_probe.ProbeFixTests.test_interning_budget_falls_back_to_literal_without_losing_bytes) ... ok
+test_invalid_particle_attempt_does_not_permanently_starve_others (test_target_probe.ProbeFixTests.test_invalid_particle_attempt_does_not_permanently_starve_others) ... ok
+test_lossless_blob_roundtrip_and_repeated_blocks_not_rewritten (test_target_probe.ProbeFixTests.test_lossless_blob_roundtrip_and_repeated_blocks_not_rewritten) ... ok
+test_main_continues_to_all_six_stages_after_per_stage_limit (test_target_probe.ProbeFixTests.test_main_continues_to_all_six_stages_after_per_stage_limit) ... ok
+test_main_interrupt_preserves_running_stage_counts (test_target_probe.ProbeFixTests.test_main_interrupt_preserves_running_stage_counts) ... ok
+test_missing_reference_is_not_silently_zero_or_empty (test_target_probe.ProbeFixTests.test_missing_reference_is_not_silently_zero_or_empty) ... ok
+test_new_and_replaced_particles_get_priority (test_target_probe.ProbeFixTests.test_new_and_replaced_particles_get_priority) ... ok
+test_particle_rotation_covers_beyond_first_sixteen (test_target_probe.ProbeFixTests.test_particle_rotation_covers_beyond_first_sixteen) ... ok
+test_rejected_frame_does_not_commit_unwritten_blob_references (test_target_probe.ProbeFixTests.test_rejected_frame_does_not_commit_unwritten_blob_references) ... ok
+test_stage_limit_does_not_consume_another_stages_budget (test_target_probe.ProbeFixTests.test_stage_limit_does_not_consume_another_stages_budget) ... ok
+test_archive_is_valid_when_closed_with_interrupted_manifest (test_target_probe.TargetProbeTests.test_archive_is_valid_when_closed_with_interrupted_manifest) ... ok
+test_build_pin_accepts_only_matching_schema_and_image (test_target_probe.TargetProbeTests.test_build_pin_accepts_only_matching_schema_and_image) ... ok
+test_container_chase_one_hop_two_blocks_and_no_module_or_owner (test_target_probe.TargetProbeTests.test_container_chase_one_hop_two_blocks_and_no_module_or_owner) ... ok
+test_full_handle_match_not_index_only (test_target_probe.TargetProbeTests.test_full_handle_match_not_index_only) ... ok
+test_identity_checks_backlink_name_and_full_handle (test_target_probe.TargetProbeTests.test_identity_checks_backlink_name_and_full_handle) ... ok
+test_invalid_offset_never_becomes_memory_address (test_target_probe.TargetProbeTests.test_invalid_offset_never_becomes_memory_address) ... ok
+test_missing_container_does_not_follow_anything (test_target_probe.TargetProbeTests.test_missing_container_does_not_follow_anything) ... ok
+test_nan_scalar_is_null (test_target_probe.TargetProbeTests.test_nan_scalar_is_null) ... ok
+test_oversize_frame_is_explicitly_truncated (test_target_probe.TargetProbeTests.test_oversize_frame_is_explicitly_truncated) ... ok
+test_reader_exception_is_partial_frame (test_target_probe.TargetProbeTests.test_reader_exception_is_partial_frame) ... ok
+test_recorder_collects_non_profile_raw_fields_without_auto_target (test_target_probe.TargetProbeTests.test_recorder_collects_non_profile_raw_fields_without_auto_target) ... ok
+test_size_cap_refuses_before_write (test_target_probe.TargetProbeTests.test_size_cap_refuses_before_write) ... ok
+test_standalone_has_no_sender_or_game_writes (test_target_probe.TargetProbeTests.test_standalone_has_no_sender_or_game_writes) ... ok
+test_unreadable_is_null_not_zero (test_target_probe.TargetProbeTests.test_unreadable_is_null_not_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 753 tests in 29.986s
+
+OK

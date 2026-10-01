@@ -1,0 +1,10 @@
+{
+  "format": "hachbob-staged-patch-v1",
+  "id": "package-13fb58a6c3584f61a50df9d1fb6bc7f8",
+  "files": {
+    "client_dll.json": "fabedd63041971c8ee09243fb229abd896d259b8e7351a61c1700f594868b1c6",
+    "globals_manifest.json": "acb1b513a1292023f48ba4aca47f9780f74daa0bff7ca24f457d4e418f9b1d6c",
+    "buttons.json": "267b480aad5df6769df70d9e698482ca18a078b29135e9fcdcb12d58f0184a85",
+    "info.json": "4a48b57c5a55d467559caf786feb99278e60fab951c168b81cdd63ac8adbb906"
+  }
+}

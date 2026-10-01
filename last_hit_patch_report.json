@@ -1,0 +1,638 @@
+{
+  "format": "hachbob-last-hit-patch-report-v1",
+  "utc": "2026-09-30T00:31:53.792229+00:00",
+  "approved_for_input": false,
+  "writes_to_game": false,
+  "profile_changes": false,
+  "samples_are_not_kill_confirmation": true,
+  "installation": {
+    "schema_sha256": "fabedd63041971c8ee09243fb229abd896d259b8e7351a61c1700f594868b1c6",
+    "raw_schema_matches_supplied": true,
+    "class_layout_sha256": "0a0c1eb77bb79f99a05e27c4c8620cca3f844831c020e1d397f9e686f8617f10",
+    "class_layout_matches": true,
+    "installed_globals": {
+      "DW_GAME_ENTITY_SYSTEM": 106159024,
+      "DW_HIGHEST_INDEX": 8336,
+      "DW_VIEW_MATRIX": 102518656,
+      "DW_VIEW_RENDER": 102521144,
+      "DW_GAME_RULES": 102496688,
+      "DW_GLOBAL_VARS": 94946304,
+      "DW_NETWORK_GAME_CLIENT": 9493552,
+      "OFF_NGC_LOCAL_PLAYER": 248,
+      "DW_BUILD_NUMBER": 6356260
+    },
+    "global_mismatches": {}
+  },
+  "client_image": {
+    "base": "0x7ffbfa6f0000",
+    "size": 115027968,
+    "timestamp": 1790705915
+  },
+  "process_id": 15656,
+  "private_layout_candidate": {
+    "manager_owner": 8,
+    "count": 16,
+    "data": 24,
+    "capacity": 32,
+    "modifier_manager": 48,
+    "stack_count": 132,
+    "max_count": 128
+  },
+  "hero_samples": [
+    {
+      "entity": "0x2719303e000",
+      "handle": "0x189810b",
+      "name": "npc_dota_hero_zuus",
+      "runtime_type": "C_DOTA_Unit_Hero_Zuus",
+      "fields": {
+        "m_iHealth": 2210,
+        "m_iMaxHealth": 2210,
+        "m_iTeamNum": 2,
+        "m_lifeState": 0,
+        "m_iDamageMin": 162,
+        "m_iDamageMax": 172,
+        "m_iDamageBonus": 0,
+        "m_flPhysicalArmorValue": 1.0,
+        "m_flHealthRegen": 0.2510080337524414,
+        "m_flBaseAttackTime": 1.7000000476837158,
+        "m_iBaseAttackSpeed": 100,
+        "m_iAttackRange": 380,
+        "m_flHullRadius": 24.0,
+        "m_flLastAttackTime": 0.0,
+        "m_flAgilityTotal": 59.800018310546875
+      },
+      "private_candidate": {
+        "approved_for_input": false,
+        "structural_check": "passed",
+        "partial_ias": 0.0,
+        "sources": "no supported IAS modifiers"
+      }
+    },
+    {
+      "entity": "0x2719303e000",
+      "handle": "0x189810b",
+      "name": "npc_dota_hero_zuus",
+      "runtime_type": "C_DOTA_Unit_Hero_Zuus",
+      "fields": {
+        "m_iHealth": 2210,
+        "m_iMaxHealth": 2210,
+        "m_iTeamNum": 2,
+        "m_lifeState": 0,
+        "m_iDamageMin": 162,
+        "m_iDamageMax": 172,
+        "m_iDamageBonus": 0,
+        "m_flPhysicalArmorValue": 1.0,
+        "m_flHealthRegen": 0.2510080337524414,
+        "m_flBaseAttackTime": 1.7000000476837158,
+        "m_iBaseAttackSpeed": 100,
+        "m_iAttackRange": 380,
+        "m_flHullRadius": 24.0,
+        "m_flLastAttackTime": 0.0,
+        "m_flAgilityTotal": 59.800018310546875
+      },
+      "private_candidate": {
+        "approved_for_input": false,
+        "structural_check": "passed",
+        "partial_ias": 0.0,
+        "sources": "no supported IAS modifiers"
+      }
+    },
+    {
+      "entity": "0x2719303e000",
+      "handle": "0x189810b",
+      "name": "npc_dota_hero_zuus",
+      "runtime_type": "C_DOTA_Unit_Hero_Zuus",
+      "fields": {
+        "m_iHealth": 2210,
+        "m_iMaxHealth": 2210,
+        "m_iTeamNum": 2,
+        "m_lifeState": 0,
+        "m_iDamageMin": 162,
+        "m_iDamageMax": 172,
+        "m_iDamageBonus": 0,
+        "m_flPhysicalArmorValue": 1.0,
+        "m_flHealthRegen": 0.2510080337524414,
+        "m_flBaseAttackTime": 1.7000000476837158,
+        "m_iBaseAttackSpeed": 100,
+        "m_iAttackRange": 380,
+        "m_flHullRadius": 24.0,
+        "m_flLastAttackTime": 0.0,
+        "m_flAgilityTotal": 59.800018310546875
+      },
+      "private_candidate": {
+        "approved_for_input": false,
+        "structural_check": "passed",
+        "partial_ias": 0.0,
+        "sources": "no supported IAS modifiers"
+      }
+    }
+  ],
+  "nearby_targets": [
+    {
+      "uid": [
+        2682766456832,
+        21397653
+      ],
+      "name": "npc_dota_creep_goodguys_flagbearer",
+      "kind": "creep",
+      "team": 2,
+      "hp": 586,
+      "maxhp": 586,
+      "pos": [
+        -428.625,
+        -344.1875,
+        0.0
+      ],
+      "screen": [
+        1758.6200644150986,
+        609.699020823377,
+        1136.5821077127916
+      ],
+      "yaw": 57.6562385559082,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "flagbearer",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2687389673472,
+        25100445
+      ],
+      "name": "npc_dota_creep_goodguys_melee",
+      "kind": "creep",
+      "team": 2,
+      "hp": 113,
+      "maxhp": 586,
+      "pos": [
+        -484.75,
+        -175.15625,
+        0.0
+      ],
+      "screen": [
+        1660.456965086997,
+        515.6676700887405,
+        1221.0977314861407
+      ],
+      "yaw": 2.8125,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "melee",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2687513292800,
+        28213447
+      ],
+      "name": "npc_dota_creep_badguys_flagbearer",
+      "kind": "creep",
+      "team": 3,
+      "hp": 440,
+      "maxhp": 586,
+      "pos": [
+        -365.09375,
+        -239.4375,
+        0.0
+      ],
+      "screen": [
+        1753.3777132255163,
+        549.8518084765834,
+        1188.957109101311
+      ],
+      "yaw": -154.6875,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "flagbearer",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2682749239296,
+        22610132
+      ],
+      "name": "npc_dota_creep_badguys_melee",
+      "kind": "creep",
+      "team": 3,
+      "hp": 489,
+      "maxhp": 586,
+      "pos": [
+        -402.21875,
+        -108.03125,
+        0.0
+      ],
+      "screen": [
+        1682.9706682078672,
+        481.84058112801864,
+        1254.6602332899186
+      ],
+      "yaw": -142.03121948242188,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "melee",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2682748902400,
+        20545754
+      ],
+      "name": "npc_dota_creep_goodguys_ranged",
+      "kind": "creep",
+      "team": 2,
+      "hp": 336,
+      "maxhp": 336,
+      "pos": [
+        -763.59375,
+        -465.21875,
+        0.0
+      ],
+      "screen": [
+        1597.063343880029,
+        686.1027344968138,
+        1076.066475391817
+      ],
+      "yaw": 35.15624237060547,
+      "damage_min": 27,
+      "damage_max": 32,
+      "armor": 0.0,
+      "regen": 2.0008163452148438,
+      "attack_range": 0,
+      "hull": 8.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "ranged",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2687537499136,
+        29982967
+      ],
+      "name": "npc_dota_creep_goodguys_melee",
+      "kind": "creep",
+      "team": 2,
+      "hp": 380,
+      "maxhp": 586,
+      "pos": [
+        -429.71875,
+        -271.84375,
+        0.0
+      ],
+      "screen": [
+        1728.4072901686834,
+        567.7955311585091,
+        1172.753982688887
+      ],
+      "yaw": 25.312496185302734,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "melee",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2687470428160,
+        22642968
+      ],
+      "name": "npc_dota_creep_badguys_ranged",
+      "kind": "creep",
+      "team": 3,
+      "hp": 199,
+      "maxhp": 336,
+      "pos": [
+        -80.65625,
+        66.53125,
+        120.6875
+      ],
+      "screen": [
+        1875.1423961596267,
+        363.9668263345673,
+        1237.4230440810413
+      ],
+      "yaw": -150.46875,
+      "damage_min": 27,
+      "damage_max": 32,
+      "armor": 0.0,
+      "regen": 2.0008163452148438,
+      "attack_range": 0,
+      "hull": 8.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "ranged",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2686833013760,
+        29720858
+      ],
+      "name": "npc_dota_creep_badguys_melee",
+      "kind": "creep",
+      "team": 3,
+      "hp": 266,
+      "maxhp": 586,
+      "pos": [
+        -361.375,
+        -167.46875,
+        0.0
+      ],
+      "screen": [
+        1727.47225429008,
+        511.6996305233313,
+        1224.941484182587
+      ],
+      "yaw": -177.18746948242188,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "melee",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2687538939904,
+        25166230
+      ],
+      "name": "npc_dota_creep_badguys_ranged",
+      "kind": "creep",
+      "team": 3,
+      "hp": 336,
+      "maxhp": 336,
+      "pos": [
+        -90.53125,
+        103.53125,
+        128.0
+      ],
+      "screen": [
+        1859.203814587887,
+        345.02995088351867,
+        1249.5902327778465
+      ],
+      "yaw": -144.84375,
+      "damage_min": 27,
+      "damage_max": 32,
+      "armor": 0.0,
+      "regen": 2.0008163452148438,
+      "attack_range": 0,
+      "hull": 8.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "ranged",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2686833020928,
+        23003543
+      ],
+      "name": "npc_dota_creep_badguys_melee",
+      "kind": "creep",
+      "team": 3,
+      "hp": 586,
+      "maxhp": 586,
+      "pos": [
+        -316.75,
+        -295.625,
+        0.0
+      ],
+      "screen": [
+        1805.2755765039037,
+        581.2821672209064,
+        1160.8633601578974
+      ],
+      "yaw": 167.34371948242188,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "melee",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2687537914880,
+        28541336
+      ],
+      "name": "npc_dota_creep_goodguys_melee",
+      "kind": "creep",
+      "team": 2,
+      "hp": 586,
+      "maxhp": 586,
+      "pos": [
+        -532.15625,
+        -120.40625,
+        0.0
+      ],
+      "screen": [
+        1615.3070261475768,
+        487.9401161773529,
+        1248.4727304500443
+      ],
+      "yaw": 4.21875,
+      "damage_min": 22,
+      "damage_max": 26,
+      "armor": 2.0,
+      "regen": 0.4985828399658203,
+      "attack_range": 0,
+      "hull": 16.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "melee",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    },
+    {
+      "uid": [
+        2682748895232,
+        13205946
+      ],
+      "name": "npc_dota_creep_goodguys_ranged",
+      "kind": "creep",
+      "team": 2,
+      "hp": 300,
+      "maxhp": 300,
+      "pos": [
+        -1856.0,
+        -1504.0,
+        128.0
+      ],
+      "screen": [
+        1027.7935058888936,
+        2317.218565071996,
+        445.8245691923014
+      ],
+      "yaw": 0.0,
+      "damage_min": 21,
+      "damage_max": 26,
+      "armor": 0.0,
+      "regen": 2.0008163452148438,
+      "attack_range": 0,
+      "hull": 8.0,
+      "bat": 0,
+      "attack_point": 0,
+      "turn_rate": 0,
+      "projectile_speed": 0,
+      "interval": 0,
+      "last_attack": 0,
+      "target": [],
+      "visible": true,
+      "damage_bonus": 0,
+      "lane_type": "ranged",
+      "incoming_multiplier": 1.0,
+      "speed_signature": [],
+      "speed_source": "base + agility estimate",
+      "runtime_type": "C_DOTA_BaseNPC_Creep_Lane"
+    }
+  ],
+  "observation": "Read-only samples collected; review required. No build/layout approval was changed.",
+  "elapsed_seconds": 1.385
+}

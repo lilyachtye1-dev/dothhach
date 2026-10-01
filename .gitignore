@@ -1,0 +1,15 @@
+# Исключаем скомпилированные исполняемые файлы и логи
+*.exe
+*.log
+*.log.*
+
+# Исключаем кэш Python
+__pycache__/
+*.py[cod]
+# Per-overlay camera control/state files; never ship or reuse a live session.
+.camera_sessions/
+
+# Last Hit commands/preferences belong to a local session, not a release.
+last_hit_controls.json
+last_hit_controls.json.*.tmp
+last_hit_preferences.json

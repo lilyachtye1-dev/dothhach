@@ -1,0 +1,48 @@
+{
+  "scope": "Last Hit alpha5 only; not a KS modifier approval",
+  "report_sha256": "2c9c12ec6c3a45351a8835b572662e071c845a9e60bd339bb7e78629f8235036",
+  "report_utc": "2026-09-30T00:31:53.792229+00:00",
+  "schema_sha256": "fabedd63041971c8ee09243fb229abd896d259b8e7351a61c1700f594868b1c6",
+  "class_layout_sha256": "0a0c1eb77bb79f99a05e27c4c8620cca3f844831c020e1d397f9e686f8617f10",
+  "client_image": {
+    "timestamp": 1790705915,
+    "size": 115027968
+  },
+  "globals": {
+    "DW_GAME_ENTITY_SYSTEM": 106159024,
+    "DW_HIGHEST_INDEX": 8336,
+    "DW_VIEW_MATRIX": 102518656,
+    "DW_VIEW_RENDER": 102521144,
+    "DW_GAME_RULES": 102496688,
+    "DW_GLOBAL_VARS": 94946304,
+    "DW_NETWORK_GAME_CLIENT": 9493552,
+    "OFF_NGC_LOCAL_PLAYER": 248,
+    "DW_BUILD_NUMBER": 6356260
+  },
+  "hero": "npc_dota_hero_zuus",
+  "hero_samples": 3,
+  "stable_hero_fields": true,
+  "private_structural_checks": [
+    "passed",
+    "passed",
+    "passed"
+  ],
+  "partial_ias_samples": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "targets": {
+    "flagbearer": 2,
+    "melee": 6,
+    "ranged": 4
+  },
+  "limitations": [
+    "No siege sample",
+    "No nonzero IAS sample",
+    "No input, hit, kill or deny confirmation",
+    "No local timing-assets probe"
+  ],
+  "automatic_report_import": false,
+  "runtime_guards": "Exact build/schema/globals, owner/type/stability; siege modifier must be present on new build"
+}

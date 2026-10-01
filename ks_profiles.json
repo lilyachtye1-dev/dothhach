@@ -1,0 +1,1400 @@
+{
+  "schema_version": 1,
+  "_readme": "Профили с числами OpenDota/Dotaconstants 7.41f (пин commit bf193a5 от 2026-09-19); это ближайший публичный snapshot к offsets, но dwBuildNumber=6356260 не подтверждён как 7.41f. Offsets задают размещение памяти, не damage. Новые шаблоны и сложные/неподдержанные способности выключены; сверить соответствие клиента, quickcast-бинды, тип каста, дальность и особенности перед включением. Старт автоматизации — OFF; Killsteal включается только кнопкой в приложении, F6 не является переключателем.",
+  "settings": {
+    "auto_cast": true,
+    "toggle_key": "NONE",
+    "stale_seconds": 0.25,
+    "stale_off_seconds": 2.0,
+    "hp_margin": 40,
+    "latency_seconds": 0.1,
+    "mana_reserve": 0,
+    "attempt_interval": 0.8,
+    "confirm_timeout": 1.5,
+    "impact_padding": 0.2,
+    "aim_y": -30,
+    "screen_margin": 40,
+    "hud_bottom": 180,
+    "manual_pause_seconds": 0.25,
+    "stationary_seconds": 0.3,
+    "max_point_speed": 40,
+    "local_block_mask": 0,
+    "target_block_mask": 0,
+    "blocked_target_items": [
+      "item_sphere",
+      "item_lotus_orb",
+      "item_aeon_disk",
+      "item_mirror_shield"
+    ],
+    "item_slot_keys": [
+      "Z",
+      "X",
+      "C",
+      "V",
+      "B",
+      "N"
+    ],
+    "live_modifier_layout": null
+  },
+  "abilities": [
+    {
+      "id": "item_dagon",
+      "hero": "*",
+      "enabled": true,
+      "model": "flat",
+      "kind": "item",
+      "variants": {
+        "item_dagon": 1,
+        "item_dagon_1": 1,
+        "item_dagon_2": 2,
+        "item_dagon_3": 3,
+        "item_dagon_4": 4,
+        "item_dagon_5": 5,
+        "item_dagon_upgraded": 0
+      },
+      "key": "inventory",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.1,
+      "projectile_speed": 0,
+      "priority": 0,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Уровень из имени предмета; item_dagon_upgraded использует прочитанный уровень предмета. Клавиша текущего активного слота 0..5. Без проверки charges>0."
+    },
+    {
+      "id": "lion_finger_of_death",
+      "hero": "lion",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "lion_finger_of_death": 0
+      },
+      "key": "R",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        600,
+        725,
+        850
+      ],
+      "int_scale": 0,
+      "range": 900,
+      "min_range": 0,
+      "delay": 0.55,
+      "projectile_speed": 0,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "База/дальность/cast point + damage_delay: OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Стаки из игры; per-kill 25 и талант +20 — подтверждение пользователя. Усиление предметами, Scepter и прочие бонусы не учтены.",
+      "stack_scaling": {
+        "modifier": "CDOTA_Modifier_Lion_FingerOfDeath_Kill_Counter",
+        "per_stack": 25,
+        "talent": "special_bonus_unique_lion_8",
+        "talent_bonus": 20
+      }
+    },
+    {
+      "id": "lion_impale",
+      "hero": "lion",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "lion_impale": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        105,
+        170,
+        235,
+        300
+      ],
+      "int_scale": 0,
+      "range": 650,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 2800,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Линейный point-hit. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Quickcast на нажатие; включать после проверки клиента/бинда."
+    },
+    {
+      "id": "zuus_arc_lightning",
+      "hero": "zuus",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "zuus_arc_lightning": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        105,
+        130,
+        155,
+        180
+      ],
+      "int_scale": 0,
+      "range": 800,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первое попадание; отскоки не суммируются. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "zuus_lightning_bolt",
+      "hero": "zuus",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "zuus_lightning_bolt": 0
+      },
+      "key": "W",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        140,
+        220,
+        300,
+        380
+      ],
+      "int_scale": 0,
+      "range": [
+        700,
+        750,
+        800,
+        850
+      ],
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Unit-target. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить фактический quickcast и дальность в клиенте."
+    },
+    {
+      "id": "zuus_thundergods_wrath",
+      "hero": "zuus",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "zuus_thundergods_wrath": 0
+      },
+      "key": "R",
+      "cast": "global",
+      "damage_type": "magical",
+      "damage": [
+        275,
+        425,
+        575
+      ],
+      "int_scale": 0,
+      "range": 0,
+      "min_range": 0,
+      "delay": 0.4,
+      "projectile_speed": 0,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Глобальный прямой hit. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "lina_dragon_slave",
+      "hero": "lina",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "lina_dragon_slave": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        65,
+        125,
+        185,
+        245
+      ],
+      "int_scale": 0,
+      "range": 1075,
+      "min_range": 0,
+      "delay": 0.35,
+      "projectile_speed": 1200,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Линейный hit; цель должна оставаться на линии. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "lina_light_strike_array",
+      "hero": "lina",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "lina_light_strike_array": 0
+      },
+      "key": "W",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        125,
+        170,
+        215
+      ],
+      "int_scale": 0,
+      "range": 700,
+      "min_range": 0,
+      "delay": 0.95,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Задержка удара = cast point 0.45 + delay 0.5; point-AoE, требуется неподвижная цель. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "lina_laguna_blade",
+      "hero": "lina",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "lina_laguna_blade": 0
+      },
+      "key": "R",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        400,
+        580,
+        760
+      ],
+      "int_scale": 0,
+      "range": 750,
+      "min_range": 0,
+      "delay": 0.55,
+      "projectile_speed": 0,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Magical в выбранном публичном snapshot; delay = cast point 0.3 + damage_delay 0.25. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Scepter/усиление не учтены."
+    },
+    {
+      "id": "lich_frost_nova",
+      "hero": "lich",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "lich_frost_nova": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        120,
+        200,
+        280,
+        360
+      ],
+      "int_scale": 0,
+      "range": [
+        575,
+        600,
+        625,
+        650
+      ],
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первичная цель получает base damage + aoe_damage; AoE-цели получают только area component. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "ogre_magi_fireblast",
+      "hero": "ogre_magi",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "ogre_magi_fireblast": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        70,
+        130,
+        190,
+        250
+      ],
+      "int_scale": 0,
+      "range": 525,
+      "min_range": 0,
+      "delay": 0.45,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Прямой первый Fireblast; Multicast не моделируется. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "vengefulspirit_magic_missile",
+      "hero": "vengefulspirit",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "vengefulspirit_magic_missile": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        100,
+        180,
+        260,
+        340
+      ],
+      "int_scale": 0,
+      "range": 650,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 1350,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Прямой hit. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "vengefulspirit_wave_of_terror",
+      "hero": "vengefulspirit",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "vengefulspirit_wave_of_terror": 0
+      },
+      "key": "W",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        60,
+        80,
+        100,
+        120
+      ],
+      "int_scale": 0,
+      "range": 1400,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 2000,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Линейный прямой компонент; point-цель должна стоять. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "sven_storm_bolt",
+      "hero": "sven",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "sven_storm_bolt": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        160,
+        240,
+        320
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 1000,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первое попадание; Aghanim bonus не учтён. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "bane_brain_sap",
+      "hero": "bane",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "bane_brain_sap": 0
+      },
+      "key": "W",
+      "cast": "unit",
+      "damage_type": "pure",
+      "damage": [
+        90,
+        160,
+        230,
+        300
+      ],
+      "int_scale": 0,
+      "range": 625,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Прямой pure hit. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "pugna_nether_blast",
+      "hero": "pugna",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "pugna_nether_blast": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        95,
+        170,
+        245,
+        320
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 1.0,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Задержка удара = cast point 0.2 + blast delay 0.8; радиус 400, нужен неподвижный target. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "crystal_maiden_crystal_nova",
+      "hero": "crystal_maiden",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "crystal_maiden_crystal_nova": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        110,
+        160,
+        210,
+        260
+      ],
+      "int_scale": 0,
+      "range": 700,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Point-AoE, радиус 425; нужна неподвижная цель. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "queenofpain_scream_of_pain",
+      "hero": "queenofpain",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "queenofpain_scream_of_pain": 0
+      },
+      "key": "E",
+      "cast": "no_target",
+      "damage_type": "magical",
+      "self_damage_fraction": 0.25,
+      "damage": [
+        90,
+        175,
+        260,
+        345
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0,
+      "projectile_speed": 900,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "No-target AoE, радиус 600; 25% урона по героям отражается на Queen of Pain и self-damage не учитывается движком. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Отключи профиль, если нельзя допускать риск самоубийства."
+    },
+    {
+      "id": "necrolyte_death_pulse",
+      "hero": "necrolyte",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "necrolyte_death_pulse": 0
+      },
+      "key": "Q",
+      "cast": "no_target",
+      "damage_type": "magical",
+      "damage": [
+        100,
+        160,
+        220,
+        280
+      ],
+      "int_scale": 0,
+      "range": 500,
+      "min_range": 0,
+      "delay": 0,
+      "projectile_speed": 400,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "No-target wave; урон прямого первого попадания, скорость снаряда из данных. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "centaur_hoof_stomp",
+      "hero": "centaur",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "centaur_hoof_stomp": 0
+      },
+      "key": "Q",
+      "cast": "no_target",
+      "damage_type": "magical",
+      "damage": [
+        70,
+        140,
+        210,
+        280
+      ],
+      "int_scale": 0,
+      "range": 325,
+      "min_range": 0,
+      "delay": 0.5,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "No-target AoE, windup 0.5 s, радиус 325; требуется наблюдаемая неподвижная цель. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "leshrac_split_earth",
+      "hero": "leshrac",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "leshrac_split_earth": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        115,
+        170,
+        225,
+        280
+      ],
+      "int_scale": 0,
+      "range": 650,
+      "min_range": 0,
+      "delay": 1.05,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Delay = cast point 0.7 + impact delay 0.35; point-AoE, требуется неподвижная цель. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "luna_lucent_beam",
+      "hero": "luna",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "luna_lucent_beam": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        75,
+        150,
+        225,
+        300
+      ],
+      "int_scale": 0,
+      "range": 800,
+      "min_range": 0,
+      "delay": 0.4,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Прямой unit-target hit. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "rubick_fade_bolt",
+      "hero": "rubick",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "rubick_fade_bolt": 0
+      },
+      "key": "W",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        85,
+        165,
+        245,
+        325
+      ],
+      "int_scale": 0,
+      "range": 800,
+      "min_range": 0,
+      "delay": 0.1,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Учитывается только первое попадание; damage reduction/отскоки не суммируются. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "shadow_shaman_ether_shock",
+      "hero": "shadow_shaman",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "shadow_shaman_ether_shock": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        125,
+        190,
+        255,
+        320
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Учитывается только базовый hit; конус и последующие цели не моделируются. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "tinker_laser",
+      "hero": "tinker",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "tinker_laser": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "pure",
+      "damage": [
+        75,
+        150,
+        225,
+        300
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.4,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Pure hit; дополнительные эффекты Scepter не моделируются. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "dragon_knight_breathe_fire",
+      "hero": "dragon_knight",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "dragon_knight_breathe_fire": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        160,
+        240,
+        320
+      ],
+      "int_scale": 0,
+      "range": 750,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 1050,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Линейный hit; использована консервативная длина 750, цель должна стоять на линии. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "death_prophet_carrion_swarm",
+      "hero": "death_prophet",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "death_prophet_carrion_swarm": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        100,
+        175,
+        250,
+        325
+      ],
+      "int_scale": 0,
+      "range": 900,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 1100,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Линейный hit; цель должна стоять на линии. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "magnataur_shockwave",
+      "hero": "magnataur",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "magnataur_shockwave": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        75,
+        150,
+        225,
+        300
+      ],
+      "int_scale": 0,
+      "range": 1200,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 1200,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Линейный hit; цель должна стоять на линии. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "puck_illusory_orb",
+      "hero": "puck",
+      "enabled": false,
+      "model": "unsupported",
+      "kind": "ability",
+      "variants": {
+        "puck_illusory_orb": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        70,
+        140,
+        210,
+        280
+      ],
+      "int_scale": 0,
+      "range": 1950,
+      "min_range": 0,
+      "delay": 0.1,
+      "projectile_speed": 750,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "ОТКЛЮЧЕНО: описание текущего клиента помечает способность как vector-targeted; движок отправляет только point quickcast, без жеста drag/release. Не включать без доработки ввода. Числа из OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "skywrath_mage_arcane_bolt",
+      "hero": "skywrath_mage",
+      "enabled": true,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "skywrath_mage_arcane_bolt": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        60,
+        90,
+        120,
+        150
+      ],
+      "int_scale": 1.5,
+      "range": 875,
+      "min_range": 0,
+      "delay": 0.1,
+      "projectile_speed": 500,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Формула base damage + 1.5 × INT; bonus/talent modifiers не учтены. OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена."
+    },
+    {
+      "id": "invoker_sun_strike",
+      "hero": "invoker",
+      "enabled": false,
+      "model": "unsupported",
+      "kind": "ability",
+      "variants": {
+        "invoker_sun_strike": 0
+      },
+      "key": "T",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        0
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Нужны уровень Exort, задержка, деление урона и предикт. Не реализовано."
+    },
+    {
+      "id": "necrolyte_reapers_scythe",
+      "hero": "necrolyte",
+      "enabled": false,
+      "model": "unsupported",
+      "kind": "ability",
+      "variants": {
+        "necrolyte_reapers_scythe": 0
+      },
+      "key": "R",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        0
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Урон от недостающего HP; отдельная формула не реализована."
+    },
+    {
+      "id": "axe_culling_blade",
+      "hero": "axe",
+      "enabled": false,
+      "model": "unsupported",
+      "kind": "ability",
+      "variants": {
+        "axe_culling_blade": 0
+      },
+      "key": "R",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        0
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Порог казни и особые правила иммунитета, не обычный плоский урон."
+    },
+    {
+      "id": "windrunner_powershot",
+      "hero": "windrunner",
+      "enabled": false,
+      "model": "unsupported",
+      "kind": "ability",
+      "variants": {
+        "windrunner_powershot": 0
+      },
+      "key": "W",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        0
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Зарядка/канал и ослабление по пути; не реализовано."
+    },
+    {
+      "id": "sandking_burrowstrike",
+      "hero": "sand_king",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "sandking_burrowstrike": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        150,
+        220,
+        290
+      ],
+      "int_scale": 0,
+      "range": [
+        550,
+        625,
+        700,
+        775
+      ],
+      "min_range": 0,
+      "delay": 0.52,
+      "projectile_speed": 2000,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Черновик Burrowstrike. Point-line; каст перемещает героя вдоль пути и может завести в опасную позицию, поэтому выключен по умолчанию. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "beastmaster_primal_roar",
+      "hero": "beastmaster",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "beastmaster_primal_roar": 0
+      },
+      "key": "R",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        150,
+        225,
+        300
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.5,
+      "projectile_speed": 0,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первичный hit; боковой AoE damage не добавлен. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "dragon_knight_dragon_tail",
+      "hero": "dragon_knight",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "dragon_knight_dragon_tail": 0
+      },
+      "key": "W",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        60,
+        90,
+        120,
+        150
+      ],
+      "int_scale": 0,
+      "range": 150,
+      "min_range": 0,
+      "delay": 0,
+      "projectile_speed": 1600,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Прямой hit; 150 — консервативная дальность базовой формы; дальность Dragon Form/Scepter отдельно не моделируется. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "leshrac_lightning_storm",
+      "hero": "leshrac",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "leshrac_lightning_storm": 0
+      },
+      "key": "E",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        90,
+        140,
+        190,
+        240
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первичный hit; прыжки lightning storm не суммируются. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "broodmother_spawn_spiderlings",
+      "hero": "broodmother",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "broodmother_spawn_spiderlings": 0
+      },
+      "key": "R",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        220,
+        320,
+        420
+      ],
+      "int_scale": 0,
+      "range": 900,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 1200,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первичный hit; spiderlings/доп. эффекты не считаются. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "night_stalker_void",
+      "hero": "night_stalker",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "night_stalker_void": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        160,
+        240,
+        320
+      ],
+      "int_scale": 0,
+      "range": 525,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Прямой hit; длительность эффекта не суммируется. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "bounty_hunter_shuriken_toss",
+      "hero": "bounty_hunter",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "bounty_hunter_shuriken_toss": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        100,
+        170,
+        240,
+        310
+      ],
+      "int_scale": 0,
+      "range": [
+        375,
+        425,
+        475,
+        525
+      ],
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 1000,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Первичное попадание; бонус за отскок и таланты не учтены. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "spirit_breaker_nether_strike",
+      "hero": "spirit_breaker",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "spirit_breaker_nether_strike": 0
+      },
+      "key": "R",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        150,
+        250,
+        350
+      ],
+      "int_scale": 0,
+      "range": 700,
+      "min_range": 0,
+      "delay": 1.0,
+      "projectile_speed": 0,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Учитывается только базовый magic damage; bash/атака не прибавляются. Герой перемещается к цели после каста. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "sniper_assassinate",
+      "hero": "sniper",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "sniper_assassinate": 0
+      },
+      "key": "R",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        300,
+        400,
+        500
+      ],
+      "int_scale": 0,
+      "range": 3000,
+      "min_range": 0,
+      "delay": 2.0,
+      "projectile_speed": 2500,
+      "priority": 30,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Только указанный bonus magical damage; физическая атака/атака снайпера не добавляются. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "chen_penitence",
+      "hero": "chen",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "chen_penitence": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "pure",
+      "damage": [
+        50,
+        100,
+        150,
+        200
+      ],
+      "int_scale": 0,
+      "range": 800,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 1400,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Только начальный direct pure hit; прочие эффекты не прибавляются. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "witch_doctor_paralyzing_cask",
+      "hero": "witch_doctor",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "witch_doctor_paralyzing_cask": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        55,
+        70,
+        85,
+        100
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 1200,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Только базовый урон первого попадания; bounce count/доп. bounce damage не суммируются. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "skeleton_king_hellfire_blast",
+      "hero": "skeleton_king",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "skeleton_king_hellfire_blast": 0
+      },
+      "key": "Q",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        100,
+        120,
+        140
+      ],
+      "int_scale": 0,
+      "range": 525,
+      "min_range": 0,
+      "delay": 0.35,
+      "projectile_speed": 1200,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Только мгновенный hit; damage-over-time после оглушения не учитывается. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "venomancer_snakebite",
+      "hero": "venomancer",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "venomancer_snakebite": 0
+      },
+      "key": "W",
+      "cast": "unit",
+      "damage_type": "magical",
+      "damage": [
+        40,
+        70,
+        100,
+        130
+      ],
+      "int_scale": 0,
+      "range": 600,
+      "min_range": 0,
+      "delay": 0.2,
+      "projectile_speed": 0,
+      "priority": 10,
+      "stationary_only": false,
+      "requires_charges": false,
+      "notes": "Используется только начальный base damage; ticks/атаки по заражённой цели не считаются. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    },
+    {
+      "id": "spectre_spectral_dagger",
+      "hero": "spectre",
+      "enabled": false,
+      "model": "flat",
+      "kind": "ability",
+      "variants": {
+        "spectre_spectral_dagger": 0
+      },
+      "key": "Q",
+      "cast": "point",
+      "damage_type": "magical",
+      "damage": [
+        80,
+        120,
+        160,
+        200
+      ],
+      "int_scale": 0,
+      "range": 1800,
+      "min_range": 0,
+      "delay": 0.3,
+      "projectile_speed": 800,
+      "priority": 10,
+      "stationary_only": true,
+      "requires_charges": false,
+      "notes": "Point-target projectile; допускается только наблюдаемая неподвижная цель; урон по другим целям/тропе не суммируется. Числа обновлены по OpenDota/Dotaconstants (публичный snapshot 7.41f), commit bf193a5 от 19.09.2026; связь dwBuildNumber=6356260 с 7.41f отдельно не подтверждена. Проверить соответствие локальному клиенту. Учтён только прямой компонент; другие модификаторы не моделируются."
+    }
+  ]
+}
